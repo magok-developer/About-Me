@@ -68,7 +68,7 @@ const Skills = () => {
 export default Skills;
 
 const Container = styled.div`
-  height: 800px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
