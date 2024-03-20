@@ -57,7 +57,7 @@ const AboutMe = () => {
 export default AboutMe;
 
 const Container = styled.div`
-  height: 1200px;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
