@@ -20,7 +20,7 @@ const Home = () => {
 export default Home;
 
 const Container = styled.div`
-  height: 800px;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
