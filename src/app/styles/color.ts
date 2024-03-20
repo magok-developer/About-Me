@@ -4,4 +4,5 @@ export const color = {
   white: "#F5F6F7",
   pointBlue: "#0D63A5",
   pointYellow: "#FFD717",
+  pointGray: "#AEBCC9",
 };
