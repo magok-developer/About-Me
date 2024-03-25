@@ -2,7 +2,6 @@
 
 import { color } from "@/app/styles/color";
 import styled from "@emotion/styled";
-import { useRef, useState } from "react";
 
 type Props = {
   router: any;
@@ -10,8 +9,6 @@ type Props = {
   setIsFocused: (path: string) => void;
 };
 const Header = ({ router, isFocused, setIsFocused }: Props) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
   const onScroll = (
     refCurrent: React.RefObject<HTMLDivElement>,
     name: string
@@ -23,21 +20,24 @@ const Header = ({ router, isFocused, setIsFocused }: Props) => {
 
   return (
     <Container>
-      {router.map((item: any) => {
-        const isActive = isFocused === item.path;
-        return (
-          <Content
-            ref={item.observe}
-            onClick={() => {
-              setIsFocused(item.path);
-              onScroll(item.observe, item.path);
-            }}
-            isActive={isActive}
-          >
-            {item.label}
-          </Content>
-        );
-      })}
+      <div className='portfolio'>Portfolio</div>
+      <div className='wrap'>
+        {router.map((item: any) => {
+          const isActive = isFocused === item.path;
+          return (
+            <Content
+              ref={item.observe}
+              onClick={() => {
+                setIsFocused(item.path);
+                onScroll(item.observe, item.path);
+              }}
+              isActive={isActive}
+            >
+              {item.label}
+            </Content>
+          );
+        })}
+      </div>
     </Container>
   );
 };
@@ -48,20 +48,30 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   z-index: 9999;
-  width: 100%;
+  width: 90%;
   height: 72px;
   padding: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 80px;
+
   background: rgba(245, 246, 247, 0.7);
   box-sizing: border-box;
+
+  .portfolio {
+    color: ${color.pointYellow};
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .wrap {
+    display: flex;
+    gap: 60px;
+  }
 `;
 
 const Content = styled.div<{ isActive: boolean }>`
   color: ${(props) => (props.isActive ? color.pointBlue : color.pointGray)};
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
 

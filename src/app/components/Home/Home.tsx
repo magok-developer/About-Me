@@ -14,9 +14,6 @@ const Home = ({ element }: Props) => {
         <div className='name'>하지원</div>
         <div className='content'>입니다.</div>
       </ContentWrap>
-      <Button color='primary' rightIcon='/images/icons/arrow-right.svg'>
-        About Me
-      </Button>
     </Container>
   );
 };
@@ -24,7 +21,7 @@ const Home = ({ element }: Props) => {
 export default Home;
 
 const Container = styled.div`
-  height: 800px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
