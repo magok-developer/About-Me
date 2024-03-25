@@ -7,8 +7,9 @@ import { useRef, useState } from "react";
 type Props = {
   router: any;
   isFocused: string;
+  setIsFocused: (path: string) => void;
 };
-const Header = ({ router, isFocused }: Props) => {
+const Header = ({ router, isFocused, setIsFocused }: Props) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const onScroll = (
@@ -16,19 +17,9 @@ const Header = ({ router, isFocused }: Props) => {
     name: string
   ) => {
     if (refCurrent.current) {
-      const currentTop = refCurrent.current.offsetTop;
-      const titleHeight = 72;
-      const top = name === "first" ? 0 : currentTop - titleHeight;
-
-      window.scrollTo({ top: top, behavior: "smooth" });
-
-      console.log("currentTop", currentTop);
-      console.log("refCurrent", refCurrent);
-      console.log("top", top);
+      refCurrent.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  console.log("isFocused", isFocused);
 
   return (
     <Container>
@@ -37,8 +28,11 @@ const Header = ({ router, isFocused }: Props) => {
         return (
           <Content
             ref={item.observe}
-            onClick={() => onScroll(item.observe, item.path)}
-            style={{ color: isActive ? color.pointBlue : color.pointGray }}
+            onClick={() => {
+              setIsFocused(item.path);
+              onScroll(item.observe, item.path);
+            }}
+            isActive={isActive}
           >
             {item.label}
           </Content>
@@ -51,7 +45,7 @@ const Header = ({ router, isFocused }: Props) => {
 export default Header;
 
 const Container = styled.div`
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 9999;
   width: 100%;
@@ -65,8 +59,8 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
-const Content = styled.div`
-  color: ${color.pointGray};
+const Content = styled.div<{ isActive: boolean }>`
+  color: ${(props) => (props.isActive ? color.pointBlue : color.pointGray)};
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;

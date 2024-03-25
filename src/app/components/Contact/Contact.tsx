@@ -50,11 +50,12 @@ const Contact = ({ element }: Props) => {
 export default Contact;
 
 const Container = styled.div`
-  height: 500px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 160px;
+  justify-content: center;
+  gap: 60px;
 
   .title {
     font-size: 32px;

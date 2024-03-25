@@ -72,12 +72,13 @@ const Skills = ({ element }: Props) => {
 export default Skills;
 
 const Container = styled.div`
-  height: 800px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
-  gap: 60px;
+  gap: 40px;
 
   .title {
     font-size: 32px;

@@ -48,9 +48,12 @@ const Page = () => {
 
   return (
     <Container>
-      <Header router={router} isFocused={isFocused} />
-
-      <Home element={scrollRef} />
+      <Header
+        router={router}
+        isFocused={isFocused}
+        setIsFocused={setIsFocused}
+      />
+      <Home element={router[0].observe} />
       <AboutMe element={router[1].observe} />
       <Skills element={router[2].observe} />
       <Project element={router[3].observe} />

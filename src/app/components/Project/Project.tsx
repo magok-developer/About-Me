@@ -50,10 +50,11 @@ const Project = ({ element }: Props) => {
 export default Project;
 
 const Container = styled.div`
-  height: 800px;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 160px;
 
   .title {

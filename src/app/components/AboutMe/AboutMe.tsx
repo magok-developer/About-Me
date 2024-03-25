@@ -61,11 +61,12 @@ const AboutMe = ({ element }: Props) => {
 export default AboutMe;
 
 const Container = styled.div`
-  height: 1000px;
+  height: 800px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 160px;
+  gap: 100px;
 
   .title {
     font-size: 32px;

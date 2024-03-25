@@ -101,11 +101,12 @@ section {
 }
 body {
   line-height: 1;
-  -ms-overflow-style: none;
+  /* -ms-overflow-style: none; */
+  overflow: scroll;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 ol,
