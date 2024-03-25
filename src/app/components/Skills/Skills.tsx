@@ -3,9 +3,13 @@ import styled from "@emotion/styled";
 import Image from "next/image";
 import React from "react";
 
-const Skills = () => {
+type Props = {
+  element: any;
+};
+
+const Skills = ({ element }: Props) => {
   return (
-    <Container>
+    <Container ref={element}>
       <div className='title'>Skills</div>
       <SkillsWrap>
         <Image
@@ -68,7 +72,7 @@ const Skills = () => {
 export default Skills;
 
 const Container = styled.div`
-  height: 700px;
+  height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;

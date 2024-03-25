@@ -3,9 +3,13 @@ import styled from "@emotion/styled";
 import Image from "next/image";
 import React from "react";
 
-const AboutMe = () => {
+type Props = {
+  element: any;
+};
+
+const AboutMe = ({ element }: Props) => {
   return (
-    <Container>
+    <Container ref={element}>
       <div className='title'>About Me</div>
       <Grid>
         <Image

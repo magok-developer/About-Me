@@ -2,9 +2,13 @@ import styled from "@emotion/styled";
 import Button from "../Button/Button";
 import { color } from "@/app/styles/color";
 
-const Home = () => {
+type Props = {
+  element: any;
+};
+
+const Home = ({ element }: Props) => {
   return (
-    <Container>
+    <Container ref={element}>
       <ContentWrap>
         <div className='content'>개발자</div>
         <div className='name'>하지원</div>
