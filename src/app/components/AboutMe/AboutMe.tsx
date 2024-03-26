@@ -76,10 +76,10 @@ const AboutMe = ({ element }: Props) => {
           <span className={isInViewport ? "highlight" : ""} ref={ref}>
             협업과 커뮤니케이션
           </span>
-          을 통해 팀원들과 함께 일하는 것을 즐깁니다.
+          을 통해 팀원들과 함께 일하는 것을 좋아합니다.
           <br />
           <br />
-          빠르게 변화하는 기술 트렌드 에 대한{" "}
+          빠르게 변화하는 기술 트렌드에 대한{" "}
           <span className={isInViewport ? "highlight" : ""} ref={ref}>
             호기심
           </span>
