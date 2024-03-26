@@ -3,18 +3,58 @@ import { color } from "@/app/styles/color";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
 
 type Props = {
-  element: any;
+  element: () => void;
 };
 
 const AboutMe = ({ element }: Props) => {
-  const { ref, isInViewport } = useScrollAnimation();
+  const { ref, isInViewport } = useScrollAnimation(element);
 
   return (
     <Container ref={element}>
       <div className='title'>About Me</div>
+
+      <div style={{ display: "flex", gap: "160px" }}>
+        <SubIntroWrap>
+          <Image
+            src='/images/icons/user.svg'
+            width={30}
+            height={30}
+            alt='user'
+          />
+          <div className='content-wrap'>
+            <div className='content-title'>이름</div>
+            <div className='content'>하지원</div>
+          </div>
+        </SubIntroWrap>
+
+        <SubIntroWrap>
+          <Image
+            src='/images/icons/calendar.svg'
+            width={30}
+            height={30}
+            alt='calendar'
+          />
+          <div className='content-wrap'>
+            <div className='content-title'>생년월일</div>
+            <div className='content'>1998.12.03</div>
+          </div>
+        </SubIntroWrap>
+
+        <SubIntroWrap>
+          <Image
+            src='/images/icons/house.svg'
+            width={30}
+            height={30}
+            alt='house'
+          />
+          <div className='content-wrap'>
+            <div className='content-title'>주소지</div>
+            <div className='content'>서울시 강서구</div>
+          </div>
+        </SubIntroWrap>
+      </div>
       <Grid>
         <Image
           src='/images/photo.jpg'
@@ -103,13 +143,33 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 80px;
 
   .title {
     font-size: 32px;
     font-weight: bold;
 
     color: ${color.black};
+  }
+`;
+
+const SubIntroWrap = styled.div`
+  display: flex;
+  gap: 16px;
+
+  .content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .content-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .content {
+    font-size: 16px;
   }
 `;
 
@@ -126,7 +186,7 @@ const Grid = styled.div`
 
 const Content = styled.div`
   line-height: normal;
-
+  font-size: 14px;
   .highlight {
     display: inline-block;
     position: relative;
