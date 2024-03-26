@@ -7,17 +7,10 @@ type Props = {
   router: any;
   isFocused: string;
   setIsFocused: (path: string) => void;
+  onScroll: (refCurrent: React.RefObject<HTMLDivElement>, name: string) => void;
 };
-const Header = ({ router, isFocused, setIsFocused }: Props) => {
-  const onScroll = (
-    refCurrent: React.RefObject<HTMLDivElement>,
-    name: string
-  ) => {
-    if (refCurrent.current) {
-      refCurrent.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
+const Header = ({ router, isFocused, setIsFocused, onScroll }: Props) => {
   return (
     <Container>
       <div className='portfolio'>Portfolio</div>
@@ -33,7 +26,7 @@ const Header = ({ router, isFocused, setIsFocused }: Props) => {
               }}
               isActive={isActive}
             >
-              {item.label}
+              <div className='label'>{item.label}</div>
             </Content>
           );
         })}
@@ -45,17 +38,17 @@ const Header = ({ router, isFocused, setIsFocused }: Props) => {
 export default Header;
 
 const Container = styled.div`
-  position: sticky;
+  margin-top: 20px;
+  position: fixed;
   top: 0;
-  z-index: 9999;
-  width: 90%;
+  z-index: 1;
+
+  width: 95%;
   height: 72px;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background: rgba(245, 246, 247, 0.7);
   box-sizing: border-box;
 
   .portfolio {
@@ -65,17 +58,31 @@ const Container = styled.div`
   }
   .wrap {
     display: flex;
-    gap: 60px;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
   }
 `;
 
 const Content = styled.div<{ isActive: boolean }>`
-  color: ${(props) => (props.isActive ? color.pointBlue : color.pointGray)};
-  font-size: 20px;
+  color: ${(props) => (props.isActive ? color.white : color.pointBlue)};
+  background-color: ${(props) =>
+    props.isActive ? color.pointBlue : color.pointGray};
+
+  padding: 10px 20px 10px 20px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
   font-weight: bold;
+
+  border-radius: 10px 10px 0 0;
   cursor: pointer;
+  transition: all 0.4s ease 0s;
 
   &:hover {
-    color: ${color.pointBlue};
+    background-color: ${color.pointBlue};
+    color: ${color.white};
+    height: 40px;
   }
 `;
