@@ -18,7 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body style={{ backgroundColor: color.white, height: "100%" }}>
+      <body
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: color.white,
+          padding: 30,
+          overflow: "hidden",
+        }}
+      >
         {children}
       </body>
     </html>

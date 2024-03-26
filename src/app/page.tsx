@@ -12,6 +12,8 @@ import { useObserver } from "./hook/useObserver";
 import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Header from "./components/Header/Header";
+import Background from "./components/Background/Background";
+import Content from "./components/Content/Content";
 
 const Page = () => {
   const path = usePathname();
@@ -46,27 +48,37 @@ const Page = () => {
     },
   ];
 
+  const onScroll = (
+    refCurrent: React.RefObject<HTMLDivElement>,
+    name: string
+  ) => {
+    if (refCurrent.current) {
+      refCurrent.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Container>
       <Header
         router={router}
         isFocused={isFocused}
         setIsFocused={setIsFocused}
+        onScroll={onScroll}
       />
-      <Home element={router[0].observe} />
-      <AboutMe element={router[1].observe} />
-      <Skills element={router[2].observe} />
-      <Project element={router[3].observe} />
-      <Contact element={router[4].observe} />
+      <Background>
+        <Content router={router} />
+      </Background>
     </Container>
   );
 };
 export default Page;
 
 const Container = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .wrap {
+  }
 `;

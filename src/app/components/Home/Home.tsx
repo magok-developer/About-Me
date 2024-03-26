@@ -10,9 +10,9 @@ const Home = ({ element }: Props) => {
   return (
     <Container ref={element}>
       <ContentWrap>
-        <div className='content'>개발자</div>
-        <div className='name'>하지원</div>
-        <div className='content'>입니다.</div>
+        <div className='content'>으아악</div>
+        <div className='name'>으아아아악</div>
+        <div className='content'>우웨에에엑</div>
       </ContentWrap>
     </Container>
   );
