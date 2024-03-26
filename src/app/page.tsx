@@ -1,49 +1,39 @@
 "use client";
 
 import styled from "@emotion/styled";
-import { color } from "./styles/color";
-
-import Home from "./components/Home/Home";
-import AboutMe from "./components/AboutMe/AboutMe";
-import Skills from "./components/Skills/Skills";
-import Contact from "./components/Contact/Contact";
-import Project from "./components/Project/Project";
 import { useObserver } from "./hook/useObserver";
-import { useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useState } from "react";
 import Header from "./components/Header/Header";
 import Background from "./components/Background/Background";
 import Content from "./components/Content/Content";
 
 const Page = () => {
-  const path = usePathname();
-  const scrollRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState("first");
 
   const router = [
     {
       path: "first",
-      label: "Home",
+      label: "<Home />",
       observe: useObserver("first", setIsFocused),
     },
     {
       path: "second",
-      label: "About Me",
+      label: "<About Me />",
       observe: useObserver("second", setIsFocused),
     },
     {
       path: "third",
-      label: "Skills",
+      label: "<Skills />",
       observe: useObserver("third", setIsFocused),
     },
     {
       path: "fourth",
-      label: "Project",
+      label: "<Project />",
       observe: useObserver("fourth", setIsFocused),
     },
     {
       path: "last",
-      label: "Contact",
+      label: "<Contact />",
       observe: useObserver("last", setIsFocused),
     },
   ];

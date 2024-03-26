@@ -68,10 +68,10 @@ const Content = styled.div<{ isActive: boolean }>`
   color: ${(props) => (props.isActive ? color.white : color.pointBlue)};
   background-color: ${(props) =>
     props.isActive ? color.pointBlue : color.pointGray};
+  height: ${(props) => (props.isActive ? "40px" : "30px")};
 
-  padding: 10px 20px 10px 20px;
-  height: 30px;
-  font-size: 16px;
+  padding: 15px 10px;
+  font-size: 14px;
   line-height: 30px;
   text-align: center;
   font-weight: bold;

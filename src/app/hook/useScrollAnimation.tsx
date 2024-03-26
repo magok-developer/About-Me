@@ -1,8 +1,9 @@
 import { useRef, useState, useEffect } from "react";
+import { useObserver } from "./useObserver";
 
-export const useScrollAnimation = () => {
+export const useScrollAnimation = ({ element }: any) => {
   const [isInViewport, setIsInViewport] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(element);
 
   useEffect(() => {
     if (!ref.current) return; // 요소가 아직 준비되지 않은 경우 중단

@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import { color } from "@/app/styles/color";
 
 type Props = {
-  element: any;
+  element: () => void;
 };
 
 const Home = ({ element }: Props) => {

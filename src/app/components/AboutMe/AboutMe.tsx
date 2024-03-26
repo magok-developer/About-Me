@@ -10,7 +10,7 @@ type Props = {
 };
 
 const AboutMe = ({ element }: Props) => {
-  const { ref, isInViewport } = useScrollAnimation();
+  const { ref, isInViewport } = useScrollAnimation(element);
 
   return (
     <Container ref={element}>

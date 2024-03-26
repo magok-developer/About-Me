@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 type Props = {
-  element: any;
+  element: () => void;
 };
 
 const Skills = ({ element }: Props) => {
