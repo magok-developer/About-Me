@@ -28,7 +28,7 @@ const Home = ({ element }: Props) => {
 export default Home;
 
 const Container = styled.div`
-  height: 600px;
+  height: 630px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,7 +62,7 @@ const ContentWrap = styled.div`
   .bg-video__content {
     opacity: 0.6;
     object-fit: cover;
-    width: 1400px;
-    height: 600px;
+    width: 1500px;
+    height: 630px;
   }
 `;
