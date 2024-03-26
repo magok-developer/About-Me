@@ -13,12 +13,13 @@ type Props = {
 const Header = ({ router, isFocused, setIsFocused, onScroll }: Props) => {
   return (
     <Container>
-      <div className='portfolio'>Portfolio</div>
+      <div className='portfolio'>HA JI WON</div>
       <div className='wrap'>
-        {router.map((item: any) => {
+        {router.map((item: any, index: number) => {
           const isActive = isFocused === item.path;
           return (
             <Content
+              key={index}
               ref={item.observe}
               onClick={() => {
                 setIsFocused(item.path);

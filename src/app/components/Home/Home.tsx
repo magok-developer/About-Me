@@ -9,10 +9,17 @@ type Props = {
 const Home = ({ element }: Props) => {
   return (
     <Container ref={element}>
+      <div className='text'>
+        JIWON
+        <br />
+        PORTFOLIO
+      </div>
       <ContentWrap>
-        <div className='content'>으아악</div>
-        <div className='name'>으아아아악</div>
-        <div className='content'>우웨에에엑</div>
+        <div className='bg-video'>
+          <video className='bg-video__content ' autoPlay muted loop>
+            <source src='/images/clouds3.mp4' type='video/mp4' />
+          </video>
+        </div>
       </ContentWrap>
     </Container>
   );
@@ -28,21 +35,34 @@ const Container = styled.div`
   justify-content: center;
 
   gap: 80px;
+
+  font-size: 100px;
+  font-weight: bold;
+
+  color: ${color.white};
+
+  .text {
+    position: absolute;
+    /* text-align: center; */
+    opacity: 0.8;
+  }
 `;
 
 const ContentWrap = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 4px;
 
-  font-size: 32px;
-  font-weight: bold;
+  .bg-video {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
 
-  color: ${color.black};
-
-  &:hover {
-    .name {
-      color: ${color.pointYellow};
-      transition: 0.3s;
-    }
+  .bg-video__content {
+    opacity: 0.6;
+    object-fit: cover;
+    width: 1400px;
+    height: 600px;
   }
 `;
