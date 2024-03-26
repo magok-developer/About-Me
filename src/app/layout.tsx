@@ -1,4 +1,5 @@
 import "../../public/reset.css";
+import "@/app/styles/global.css";
 
 import type { Metadata } from "next";
 import { color } from "./styles/color";
