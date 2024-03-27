@@ -15,7 +15,7 @@ const AboutMe = ({ element }: Props) => {
     <Container ref={element}>
       <div className='title'>About Me</div>
 
-      <div style={{ display: "flex", gap: "160px" }}>
+      <div style={{ display: "flex", gap: "100px" }}>
         <SubIntroWrap>
           <Image
             src='/images/icons/user.svg'
@@ -52,6 +52,19 @@ const AboutMe = ({ element }: Props) => {
           <div className='content-wrap'>
             <div className='content-title'>주소지</div>
             <div className='content'>서울시 강서구</div>
+          </div>
+        </SubIntroWrap>
+
+        <SubIntroWrap>
+          <Image
+            src='/images/icons/camp.svg'
+            width={30}
+            height={30}
+            alt='house'
+          />
+          <div className='content-wrap'>
+            <div className='content-title'>부트캠프</div>
+            <div className='content'>엘리스 코딩 SW 엔지니어 트랙 6기 수료</div>
           </div>
         </SubIntroWrap>
       </div>
@@ -108,7 +121,7 @@ const frameInAnimation = keyframes`
 `;
 
 const Container = styled.div`
-  height: 630px;
+  height: 650px;
   width: 100%;
   display: flex;
   flex-direction: column;
