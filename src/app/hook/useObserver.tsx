@@ -4,7 +4,7 @@ export const useObserver = (
   navName: string,
   setNavName: React.Dispatch<React.SetStateAction<string>>
 ) => {
-  const options = { threshold: 0.5 };
+  const options = { threshold: 0.1 };
   const refElement = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
