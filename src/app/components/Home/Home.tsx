@@ -17,7 +17,7 @@ const Home = ({ element }: Props) => {
       <ContentWrap>
         <div className='bg-video'>
           <video className='bg-video__content ' autoPlay muted loop>
-            <source src='/images/clouds3.mp4' type='video/mp4' />
+            <source src='/images/clouds.mp4' type='video/mp4' />
           </video>
         </div>
       </ContentWrap>

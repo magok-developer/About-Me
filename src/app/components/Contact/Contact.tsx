@@ -86,6 +86,9 @@ const Contact = ({ element }: Props) => {
           )
         )}
       </ImagesWrap>
+      <div style={{ marginTop: 200, fontSize: "12px", color: color.pointGray }}>
+        Copyright 2024. Web Frontend Developer Jiwon Portfolio
+      </div>
     </Container>
   );
 };
@@ -93,12 +96,13 @@ const Contact = ({ element }: Props) => {
 export default Contact;
 
 const Container = styled.div`
-  height: 600px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 60px;
+  margin-top: 100px;
 
   .title {
     font-size: 32px;
