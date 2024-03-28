@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import Button from "../Button/Button";
 import { color } from "@/app/styles/color";
 
 type Props = {
