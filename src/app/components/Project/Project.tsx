@@ -5,41 +5,47 @@ import React, { useState } from "react";
 import ReBirthModal from "./ProjectModal/ReBirthModal";
 import WhiteRabbitModal from "./ProjectModal/WhiteRabbitModal";
 import AboutMeModal from "./ProjectModal/AboutMeModal";
+import SideGoModal from "./ProjectModal/SideGoModal";
+import Link from "next/link";
 
 type Props = {
   element: () => void;
 };
 
+const initialModalState = {
+  reBirthModal: false,
+  whiteRabbitModal: false,
+  sideGoModal: false,
+  aboutMeModal: false,
+};
+
 const Project = ({ element }: Props) => {
-  const [reBirthModal, setReBirthModal] = useState(false);
-  const [whiteRabbitModal, setWhiteRabbitModal] = useState(false);
-  const [aboutMeModal, setAboutMeModal] = useState(false);
+  const [modalState, setModalState] = useState(initialModalState);
 
-  const handleClick = () => {
-    setReBirthModal(true);
-  };
-
-  const handleClickWhiteRabbit = () => {
-    setWhiteRabbitModal(true);
-  };
-  const handleClickAboutMe = () => {
-    setAboutMeModal(true);
+  const openModal = (modalName: string) => {
+    setModalState((prevState) => ({
+      ...prevState,
+      [modalName]: true,
+    }));
   };
 
-  const handleClose = () => {
-    setReBirthModal(false);
-    setWhiteRabbitModal(false);
-    setAboutMeModal(false);
+  // 모달 닫기 함수
+  const closeModal = () => {
+    setModalState(initialModalState);
   };
+
   return (
     <Container ref={element}>
       <div className='title'>Project</div>
 
       <Grid>
-        <img src='/images/reBirth.png' className='preview' />
+        <img src='/images/reBirth/reBirth.png' className='preview' />
         <Wrap>
           <TitleWrap>
-            <div className='project-title' onClick={handleClick}>
+            <div
+              className='project-title'
+              onClick={() => openModal("reBirthModal")}
+            >
               Re:Birth
             </div>
             <Image
@@ -51,11 +57,6 @@ const Project = ({ element }: Props) => {
           </TitleWrap>
           <div className='content'>
             4개월간 진행된 부트캠프에서 1차로 진행한 팀 프로젝트 입니다. <br />
-            모든 팀이 쇼핑몰이라는 공통 주제를 가지고 진행 하였으며,
-            <br />
-            제가 속했던 2팀에서는 리싸이클 제품을 판매하는 쇼핑몰을
-            제작하였습니다.
-            <br />
             프로젝트는 2주간 진행 되었으며, 최종적으로 대상을 수상하였습니다.{" "}
             <br />
             <br />
@@ -65,12 +66,18 @@ const Project = ({ element }: Props) => {
             <div className='stack'>CSS</div>
             <div className='stack'>JavaScript</div>
           </div>
-          <Image
-            src='/images/contact/gitHub_active.svg'
-            width={24}
-            height={24}
-            alt='git'
-          />
+          <Link
+            href='https://github.com/magok-developer/Rebirth'
+            target='_blank'
+            style={{ width: "24px" }}
+          >
+            <Image
+              src='/images/contact/gitHub_active.svg'
+              width={24}
+              height={24}
+              alt='git'
+            />
+          </Link>
         </Wrap>
       </Grid>
 
@@ -78,7 +85,10 @@ const Project = ({ element }: Props) => {
         <img src='/images/whiteRabbit/whiteRabbit.png' className='preview' />
         <Wrap>
           <TitleWrap>
-            <div className='project-title' onClick={handleClickWhiteRabbit}>
+            <div
+              className='project-title'
+              onClick={() => openModal("whiteRabbitModal")}
+            >
               White Rabbit
             </div>
             <Image
@@ -90,10 +100,6 @@ const Project = ({ element }: Props) => {
           </TitleWrap>
           <div className='content'>
             4개월간 진행된 부트캠프에서 2차로 진행한 팀 프로젝트 입니다. <br />
-            제가 속했던 7팀에서는 개발자 커뮤니티인 커리어리처럼
-            <br />
-            부트캠프 수강생들을 위한 커뮤니티를 기획하였습니다.
-            <br />
             프로젝트는 3주간 진행 되었으며, 최종적으로 우수상을 수상하였습니다.{" "}
             <br />
             <br />
@@ -103,12 +109,18 @@ const Project = ({ element }: Props) => {
             <div className='stack'>JavaScript</div>
             <div className='stack'>Styled Component</div>
           </div>
-          <Image
-            src='/images/contact/gitHub_active.svg'
-            width={24}
-            height={24}
-            alt='git'
-          />
+          <Link
+            href='https://github.com/magok-developer/WhiteRabbit'
+            target='_blank'
+            style={{ width: "24px" }}
+          >
+            <Image
+              src='/images/contact/gitHub_active.svg'
+              width={24}
+              height={24}
+              alt='git'
+            />
+          </Link>
         </Wrap>
       </Grid>
 
@@ -116,7 +128,12 @@ const Project = ({ element }: Props) => {
         <img src='/images/sideGo.png' className='preview' />
         <Wrap>
           <TitleWrap>
-            <div className='project-title'>SideGo</div>
+            <div
+              className='project-title'
+              onClick={() => openModal("sideGoModal")}
+            >
+              SideGo
+            </div>
             <Image
               src='/images/icons/arrow-right.svg'
               width={20}
@@ -149,7 +166,10 @@ const Project = ({ element }: Props) => {
         <img src='/images/aboutMe.png' className='preview' />
         <Wrap>
           <TitleWrap>
-            <div className='project-title' onClick={handleClickAboutMe}>
+            <div
+              className='project-title'
+              onClick={() => openModal("aboutMeModal")}
+            >
               About Me
             </div>
             <Image
@@ -169,12 +189,18 @@ const Project = ({ element }: Props) => {
             <div className='stack'>Styled Component</div>
             <div className='stack'>Emotion</div>
           </div>
-          <Image
-            src='/images/contact/gitHub_active.svg'
-            width={24}
-            height={24}
-            alt='git'
-          />
+          <Link
+            href='https://github.com/magok-developer/About-Me'
+            target='_blank'
+            style={{ width: "24px" }}
+          >
+            <Image
+              src='/images/contact/gitHub_active.svg'
+              width={24}
+              height={24}
+              alt='git'
+            />
+          </Link>
         </Wrap>
       </Grid>
 
@@ -254,9 +280,13 @@ const Project = ({ element }: Props) => {
         </Wrap>
       </Grid>
 
-      <ReBirthModal visible={reBirthModal} onClose={handleClose} />
-      <WhiteRabbitModal visible={whiteRabbitModal} onClose={handleClose} />
-      <AboutMeModal visible={aboutMeModal} onClose={handleClose} />
+      <ReBirthModal visible={modalState.reBirthModal} onClose={closeModal} />
+      <WhiteRabbitModal
+        visible={modalState.whiteRabbitModal}
+        onClose={closeModal}
+      />
+      <AboutMeModal visible={modalState.aboutMeModal} onClose={closeModal} />
+      <SideGoModal visible={modalState.sideGoModal} onClose={closeModal} />
     </Container>
   );
 };

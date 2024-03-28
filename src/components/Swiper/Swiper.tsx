@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Image = {
   id: number;
@@ -9,9 +9,10 @@ type Image = {
 
 type SliderProps = {
   images: Image[];
+  onClose: () => void;
 };
 
-const Slider = ({ images }: SliderProps) => {
+const Slider = ({ images, onClose }: SliderProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextSlide = () => {
@@ -23,6 +24,10 @@ const Slider = ({ images }: SliderProps) => {
     const newIndex = (currentImageIndex - 1 + images.length) % images.length;
     setCurrentImageIndex(newIndex);
   };
+
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [onClose]);
 
   return (
     <Container>

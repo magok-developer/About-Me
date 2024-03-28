@@ -56,6 +56,10 @@ const WhiteRabbitModal = ({ visible, onClose }: Props) => {
       id: 11,
       src: "/images/whiteRabbit/admin.png",
     },
+    {
+      id: 11,
+      src: "/images/whiteRabbit/상장.jpg",
+    },
   ];
   return (
     <ProjectModal
@@ -71,7 +75,7 @@ const WhiteRabbitModal = ({ visible, onClose }: Props) => {
     >
       <Container>
         <div className='project'>
-          <ImageSwiper images={images} />
+          <ImageSwiper images={images} onClose={onClose} />
         </div>
         <div
           style={{
@@ -136,6 +140,9 @@ const WhiteRabbitModal = ({ visible, onClose }: Props) => {
             <br />
             또한, 백엔드와의 소통을 통해 커뮤니케이션 스킬을 향상시키고, 상대
             포지션에 대한 이해도도 높일 수 있었습니다.
+            <br /> <br />
+            마음이 잘 맞는 팀원들 덕분에 우수상이라는 값진 상을 받을 수 있게
+            되었습니다.
           </div>
         </div>
       </Container>
