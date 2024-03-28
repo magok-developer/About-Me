@@ -8,7 +8,6 @@ type Props = {
 };
 
 const ProgressBar = ({ name, value }: Props) => {
-  console.log(value);
   return (
     <Container>
       <div className='progressbar'>

@@ -58,7 +58,7 @@ const Frontend = ({ element }: Props) => {
 
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <Image
-            src='/images/skills/React.svg'
+            src='/images/skills/react.svg'
             width={30}
             height={30}
             alt='react'

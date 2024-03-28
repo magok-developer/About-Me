@@ -10,7 +10,7 @@ const Etc = () => {
       <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <Image
-            src='/images/skills/Git.svg'
+            src='/images/skills/git.svg'
             width={30}
             height={30}
             alt='git'
