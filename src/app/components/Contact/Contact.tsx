@@ -1,15 +1,17 @@
 import { color } from "@/app/styles/color";
+import Alert from "@/components/Alert/Alert";
 import styled from "@emotion/styled";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Props = {
   element: () => void;
 };
 
 const Contact = ({ element }: Props) => {
-  const [clickedIndex, setClickedIndex] = useState(-1); // 클릭된 이미지의 인덱스를 저장합니다.
+  const [clickedIndex, setClickedIndex] = useState(-1);
+  const [alertVisible, setAlertVisible] = useState(false);
 
   const icon = [
     {
@@ -44,12 +46,21 @@ const Contact = ({ element }: Props) => {
     try {
       if (text !== "") {
         await navigator.clipboard.writeText(text);
-        alert("클립보드에 주소가 복사 되었습니다.");
+        setAlertVisible(true);
       }
     } catch (err) {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    if (alertVisible) {
+      const timeout = setTimeout(() => {
+        setAlertVisible(false);
+      }, 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [alertVisible]);
 
   return (
     <Container ref={element}>
@@ -89,6 +100,7 @@ const Contact = ({ element }: Props) => {
       <div style={{ marginTop: 200, fontSize: "12px", color: color.pointGray }}>
         Copyright 2024. Web Frontend Developer Jiwon Portfolio
       </div>
+      <Alert visible={alertVisible} onClose={() => setAlertVisible(false)} />
     </Container>
   );
 };

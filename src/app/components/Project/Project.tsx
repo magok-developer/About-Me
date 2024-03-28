@@ -38,7 +38,7 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/reBirth.png' className='preview' />
         <Wrap>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <TitleWrap>
             <div className='project-title' onClick={handleClick}>
               Re:Birth
             </div>
@@ -48,7 +48,7 @@ const Project = ({ element }: Props) => {
               height={20}
               alt='git'
             />
-          </div>
+          </TitleWrap>
           <div className='content'>
             4개월간 진행된 부트캠프에서 1차로 진행한 팀 프로젝트 입니다. <br />
             모든 팀이 쇼핑몰이라는 공통 주제를 가지고 진행 하였으며,
@@ -77,7 +77,7 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/whiteRabbit/whiteRabbit.png' className='preview' />
         <Wrap>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <TitleWrap>
             <div className='project-title' onClick={handleClickWhiteRabbit}>
               White Rabbit
             </div>
@@ -87,7 +87,7 @@ const Project = ({ element }: Props) => {
               height={20}
               alt='git'
             />
-          </div>
+          </TitleWrap>
           <div className='content'>
             4개월간 진행된 부트캠프에서 2차로 진행한 팀 프로젝트 입니다. <br />
             제가 속했던 7팀에서는 개발자 커뮤니티인 커리어리처럼
@@ -115,7 +115,7 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/sideGo.png' className='preview' />
         <Wrap>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <TitleWrap>
             <div className='project-title'>SideGo</div>
             <Image
               src='/images/icons/arrow-right.svg'
@@ -123,7 +123,7 @@ const Project = ({ element }: Props) => {
               height={20}
               alt='git'
             />
-          </div>
+          </TitleWrap>
           <div className='content'>
             사이드 프로젝트 팀을 꾸려서 진행한 프로젝트 입니다. <br />
             포트폴리오를 위해 사이드팀을 구하는 사람들을 위한 사이트를
@@ -148,7 +148,7 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/aboutMe.png' className='preview' />
         <Wrap>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <TitleWrap>
             <div className='project-title' onClick={handleClickAboutMe}>
               About Me
             </div>
@@ -158,7 +158,7 @@ const Project = ({ element }: Props) => {
               height={20}
               alt='git'
             />
-          </div>
+          </TitleWrap>
           <div className='content'>
             포트폴리오 정리를 위해 진행한 1인 프로젝트 입니다. <br />
             프로젝트는 약 1주간 진행 되었습니다.
@@ -188,7 +188,7 @@ const Project = ({ element }: Props) => {
           }}
         />
         <Wrap>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <TitleWrap>
             <div className='project-title'>진행할 프로젝트 넣기</div>
             <Image
               src='/images/icons/arrow-right.svg'
@@ -196,7 +196,7 @@ const Project = ({ element }: Props) => {
               height={20}
               alt='git'
             />
-          </div>
+          </TitleWrap>
           <div className='content'>
             포트폴리오 정리를 위해 진행한 프로젝트 입니다. <br />
             프로젝트는 약 1주간 진행 되었습니다.
@@ -226,7 +226,7 @@ const Project = ({ element }: Props) => {
           }}
         />
         <Wrap>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <TitleWrap>
             <div className='project-title'>진행할 프로젝트 넣기</div>
             <Image
               src='/images/icons/arrow-right.svg'
@@ -234,7 +234,7 @@ const Project = ({ element }: Props) => {
               height={20}
               alt='git'
             />
-          </div>
+          </TitleWrap>
           <div className='content'>
             포트폴리오 정리를 위해 진행한 프로젝트 입니다. <br />
             프로젝트는 약 1주간 진행 되었습니다.
@@ -288,14 +288,26 @@ const Grid = styled.div`
     height: 100%;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
   }
+`;
+
+const TitleWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  &:hover {
+    color: ${color.pointBlue};
+    gap: 30px;
+  }
+
   .project-title {
     font-size: 20px;
     font-weight: bold;
     transition: 0.3s;
-    cursor: pointer;
-    &:hover {
-      color: ${color.pointBlue};
-    }
   }
 `;
 

@@ -121,7 +121,7 @@ const frameInAnimation = keyframes`
 `;
 
 const Container = styled.div`
-  height: 650px;
+  height: 700px;
   width: 100%;
   display: flex;
   flex-direction: column;
