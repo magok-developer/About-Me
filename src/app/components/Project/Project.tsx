@@ -205,17 +205,11 @@ const Project = ({ element }: Props) => {
       </Grid>
 
       <Grid>
-        {/* <img src='/images/aboutMe.png' className='preview' /> */}
-        <div
-          style={{
-            width: "500px",
-            height: "235.97px",
-            background: color.pointGray,
-          }}
-        />
+        <img src='/images/todo/todo.png' className='preview' />
+
         <Wrap>
           <TitleWrap>
-            <div className='project-title'>진행할 프로젝트 넣기</div>
+            <div className='project-title'>Todo & Diary</div>
             <Image
               src='/images/icons/arrow-right.svg'
               width={20}
@@ -224,7 +218,7 @@ const Project = ({ element }: Props) => {
             />
           </TitleWrap>
           <div className='content'>
-            포트폴리오 정리를 위해 진행한 프로젝트 입니다. <br />
+            Todo List와 일기장을 결합한 1인 프로젝트입니다. <br />
             프로젝트는 약 1주간 진행 되었습니다.
           </div>
           <div style={{ display: "flex", gap: 12 }}>
