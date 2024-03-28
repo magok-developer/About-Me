@@ -2,9 +2,9 @@ import { color } from "@/app/styles/color";
 import styled from "@emotion/styled";
 import Image from "next/image";
 import React, { useState } from "react";
-import ReBirthModal from "../ProjectModal/ReBirthModal";
-import WhiteRabbitModal from "../ProjectModal/WhiteRabbitModal";
-import AboutMeModal from "../ProjectModal/AboutMeModal";
+import ReBirthModal from "./ProjectModal/ReBirthModal";
+import WhiteRabbitModal from "./ProjectModal/WhiteRabbitModal";
+import AboutMeModal from "./ProjectModal/AboutMeModal";
 
 type Props = {
   element: () => void;

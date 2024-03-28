@@ -1,16 +1,17 @@
 import React, { useRef } from "react";
 
 import styled from "@emotion/styled";
-import ProgressBar from "../Progress/ProgressBar";
+import ProgressBar from "../../../components/Progress/ProgressBar";
 import Image from "next/image";
 import { useScrollAnimation } from "@/app/hook/useScrollAnimation";
 
 type Props = {
-  isInViewport: any;
-  ref: any;
+  element: any;
 };
 
-const Frontend = ({ isInViewport, ref }: Props) => {
+const Frontend = ({ element }: Props) => {
+  const { ref, isInViewport } = useScrollAnimation(element);
+
   return (
     <Container>
       <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
@@ -21,10 +22,7 @@ const Frontend = ({ isInViewport, ref }: Props) => {
             height={30}
             alt='html'
           />
-          <ProgressBar
-            className={isInViewport ? "progressbar" : ""}
-            ref={ref}
-          />
+          <ProgressBar name='fe' value={60} />
           <Text>HTML</Text>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -34,10 +32,7 @@ const Frontend = ({ isInViewport, ref }: Props) => {
             height={30}
             alt='css'
           />
-          <ProgressBar
-            className={isInViewport ? "progressbar" : ""}
-            ref={ref}
-          />
+          <ProgressBar name='fe' value={70} />
           <Text>CSS</Text>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -47,10 +42,7 @@ const Frontend = ({ isInViewport, ref }: Props) => {
             height={30}
             alt='JS'
           />
-          <ProgressBar
-            className={isInViewport ? "progressbar" : ""}
-            ref={ref}
-          />
+          <ProgressBar name='fe' value={60} />
           <Text>JavaScript</Text>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -60,7 +52,7 @@ const Frontend = ({ isInViewport, ref }: Props) => {
             height={30}
             alt='typeScript'
           />
-          <ProgressBar className={isInViewport ? "progressbar" : ""} />
+          <ProgressBar name='fe' value={60} />
           <Text>TypeScript</Text>
         </div>
 
@@ -71,10 +63,7 @@ const Frontend = ({ isInViewport, ref }: Props) => {
             height={30}
             alt='react'
           />
-          <ProgressBar
-            className={isInViewport ? "progressbar" : ""}
-            ref={ref}
-          />
+          <ProgressBar name='fe' value={65} />
           <Text>React</Text>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -84,10 +73,7 @@ const Frontend = ({ isInViewport, ref }: Props) => {
             height={30}
             alt='nextJS'
           />
-          <ProgressBar
-            className={isInViewport ? "progressbar" : ""}
-            ref={ref}
-          />
+          <ProgressBar name='fe' value={65} />
           <Text>Next.js</Text>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -97,10 +83,7 @@ const Frontend = ({ isInViewport, ref }: Props) => {
             height={25}
             alt='reactQuery'
           />
-          <ProgressBar
-            className={isInViewport ? "progressbar" : ""}
-            ref={ref}
-          />
+          <ProgressBar name='fe' value={50} />
           <Text>React-Query</Text>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -110,10 +93,7 @@ const Frontend = ({ isInViewport, ref }: Props) => {
             height={30}
             alt='styledComponents'
           />
-          <ProgressBar
-            className={isInViewport ? "progressbar" : ""}
-            ref={ref}
-          />
+          <ProgressBar name='fe' value={65} />
           <Text>Styled-Components</Text>
         </div>
       </div>

@@ -3,7 +3,7 @@ import ProjectModal from "./ProjectModal";
 import styled from "@emotion/styled";
 import { color } from "@/app/styles/color";
 
-import ImageSwiper from "../Swiper/Swiper";
+import ImageSwiper from "../../../../components/Swiper/Swiper";
 
 type Props = {
   visible: boolean;

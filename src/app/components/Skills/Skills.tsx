@@ -1,19 +1,15 @@
 import { color } from "@/app/styles/color";
 import styled from "@emotion/styled";
-import Image from "next/image";
+
 import React from "react";
-import Progress from "../Progress/Progress";
 import Frontend from "./Frontend";
 import Etc from "./Etc";
-import { useScrollAnimation } from "@/app/hook/useScrollAnimation";
 
 type Props = {
   element: () => void;
 };
 
 const Skills = ({ element }: Props) => {
-  const { ref, isInViewport } = useScrollAnimation(element);
-
   return (
     <Container ref={element}>
       <div className='title'>Skills</div>
@@ -34,7 +30,7 @@ const Skills = ({ element }: Props) => {
           width: "100%",
         }}
       >
-        <Frontend isInViewport={isInViewport} ref={ref} />
+        <Frontend element={element} />
         <Etc />
       </div>
     </Container>
@@ -62,4 +58,17 @@ const Container = styled.div`
     font-size: 16px;
     font-weight: bold;
   }
+`;
+
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+`;
+
+const Text = styled.div`
+  font-size: 14px;
+  font-weight: bold;
 `;

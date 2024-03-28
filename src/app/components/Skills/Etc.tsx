@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from "@emotion/styled";
-import ProgressBar from "../Progress/ProgressBar";
+import ProgressBar from "../../../components/Progress/ProgressBar";
 import Image from "next/image";
 
 const Etc = () => {
@@ -15,7 +15,7 @@ const Etc = () => {
             height={30}
             alt='git'
           />
-          <ProgressBar />
+          <ProgressBar name='etc' value={65} />
           <Text>Git</Text>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -25,7 +25,7 @@ const Etc = () => {
             height={30}
             alt='postman'
           />
-          <ProgressBar />
+          <ProgressBar name='etc' value={60} />
           <Text>Postman</Text>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -35,7 +35,7 @@ const Etc = () => {
             height={30}
             alt='swagger'
           />
-          <ProgressBar />
+          <ProgressBar name='etc' value={65} />
           <Text>Swagger</Text>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -45,7 +45,7 @@ const Etc = () => {
             height={30}
             alt='Figma'
           />
-          <ProgressBar />
+          <ProgressBar name='etc' value={60} />
           <Text>Figma</Text>
         </div>
       </div>
