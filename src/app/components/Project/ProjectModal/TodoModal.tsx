@@ -3,12 +3,14 @@ import ProjectModal from "./ProjectModal";
 import styled from "@emotion/styled";
 import { color } from "@/app/styles/color";
 
+import ImageSwiper from "../../../../components/Swiper/Swiper";
+
 type Props = {
   visible: boolean;
   onClose: () => void;
 };
 
-const SideGoModal = ({ visible, onClose }: Props) => {
+const TodoModal = ({ visible, onClose }: Props) => {
   return (
     <ProjectModal
       style={{
@@ -22,7 +24,9 @@ const SideGoModal = ({ visible, onClose }: Props) => {
       onClose={onClose}
     >
       <Container>
-        <div className='project'></div>
+        <div className='project'>
+          {/* <ImageSwiper images={images} onClose={onClose} /> */}
+        </div>
         <div
           style={{
             display: "flex",
@@ -37,46 +41,51 @@ const SideGoModal = ({ visible, onClose }: Props) => {
             style={{
               fontSize: 24,
               fontWeight: "bold",
-              color: "#01FF1A",
+
+              color: color.main,
             }}
           >
-            Side Go
+            Todo & Diary
           </div>
           <ContentWrap>
             <div className='title'>진행 기간 |</div>
-            <div className='content'>2023.2 ~ 진행 중</div>
+            <div className='content'>2023.10.2 ~ 2023.10.13</div>
           </ContentWrap>
           <ContentWrap>
             <div className='title'>포지션 |</div>
-            <div className='content'>프론트엔드</div>
+            <div className='content'>디자인, 프론트엔드</div>
           </ContentWrap>
 
           <div className='title'>Summary</div>
           <div className='content'>
-            각 포지션, 기술 스택에 맞춰서 취준생 및 포트폴리오를 위해 공부하는
-            개발자들이 사이드 프로젝트를 참여하고 수월하게 진행하게 도와줄 수
-            있는 플랫폼이 필요하다는 생각에 진행하게된 프로젝트 입니다.
+            CRUD를 가장 많이 연습 해볼 수 있는 프로젝트가 무엇일까 고민해보다가
+            진행하게된 개인 프로젝트입니다.
             <br />
+            Todo List와 일기를 결합하여 개발 했습니다.
             <br />
-            사이드고는 사이드 프로젝트를 진행하는 개발자들이 중간에 이탈하지
-            않게 보증금을 받고 지원하는 역할을 합니다.
-            <br />
-            <br />
-            이탈한 유저는 보증금을 돌려받지 못하고 프로젝트에서 제외되게 됩니다.
-            <br />
-            이탈하지 않고 끝까지 남은 유저들은 보증금을 돌려받고 포트폴리오
-            결과물을 얻게 됩니다.
           </div>
 
           <div className='title'>Get</div>
-          <div className='content'>내용내용</div>
+          <div className='content'>
+            CRUD, infinite scroll, datePicker 등 다양한 기능을 넣었습니다.
+            <br />
+            <br />
+            Todo 등록 시 날짜를 추가하여 디데이를 계산할 수 있도록 했습니다.
+            <br />
+            <br />
+            일기 작성시 그날의 기분과 상태를 배터리 아이콘으로 표시 할 수 있게끔
+            디자인, 구현 했습니다.
+            <br />
+            <br />
+            상단의 아이콘 클릭시 Todo와 일기 화면이 전환 되게끔 구현했습니다.
+          </div>
         </div>
       </Container>
     </ProjectModal>
   );
 };
 
-export default SideGoModal;
+export default TodoModal;
 
 const Container = styled.div`
   height: 90%;

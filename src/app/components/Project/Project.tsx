@@ -7,6 +7,7 @@ import WhiteRabbitModal from "./ProjectModal/WhiteRabbitModal";
 import AboutMeModal from "./ProjectModal/AboutMeModal";
 import SideGoModal from "./ProjectModal/SideGoModal";
 import Link from "next/link";
+import TodoModal from "./ProjectModal/TodoModal";
 
 type Props = {
   element: () => void;
@@ -17,6 +18,7 @@ const initialModalState = {
   whiteRabbitModal: false,
   sideGoModal: false,
   aboutMeModal: false,
+  todoModal: false,
 };
 
 const Project = ({ element }: Props) => {
@@ -29,7 +31,6 @@ const Project = ({ element }: Props) => {
     }));
   };
 
-  // 모달 닫기 함수
   const closeModal = () => {
     setModalState(initialModalState);
   };
@@ -41,13 +42,8 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/reBirth/reBirth.png' className='preview' />
         <Wrap>
-          <TitleWrap>
-            <div
-              className='project-title'
-              onClick={() => openModal("reBirthModal")}
-            >
-              Re:Birth
-            </div>
+          <TitleWrap onClick={() => openModal("reBirthModal")}>
+            <div className='project-title'>Re:Birth</div>
             <Image
               src='/images/icons/arrow-right.svg'
               width={20}
@@ -84,13 +80,8 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/whiteRabbit/whiteRabbit.png' className='preview' />
         <Wrap>
-          <TitleWrap>
-            <div
-              className='project-title'
-              onClick={() => openModal("whiteRabbitModal")}
-            >
-              White Rabbit
-            </div>
+          <TitleWrap onClick={() => openModal("whiteRabbitModal")}>
+            <div className='project-title'>White Rabbit</div>
             <Image
               src='/images/icons/arrow-right.svg'
               width={20}
@@ -127,13 +118,8 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/sideGo.png' className='preview' />
         <Wrap>
-          <TitleWrap>
-            <div
-              className='project-title'
-              onClick={() => openModal("sideGoModal")}
-            >
-              SideGo
-            </div>
+          <TitleWrap onClick={() => openModal("sideGoModal")}>
+            <div className='project-title'>SideGo</div>
             <Image
               src='/images/icons/arrow-right.svg'
               width={20}
@@ -165,13 +151,8 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/aboutMe.png' className='preview' />
         <Wrap>
-          <TitleWrap>
-            <div
-              className='project-title'
-              onClick={() => openModal("aboutMeModal")}
-            >
-              About Me
-            </div>
+          <TitleWrap onClick={() => openModal("aboutMeModal")}>
+            <div className='project-title'>About Me</div>
             <Image
               src='/images/icons/arrow-right.svg'
               width={20}
@@ -208,7 +189,7 @@ const Project = ({ element }: Props) => {
         <img src='/images/todo/todo.png' className='preview' />
 
         <Wrap>
-          <TitleWrap>
+          <TitleWrap onClick={() => openModal("todoModal")}>
             <div className='project-title'>Todo & Diary</div>
             <Image
               src='/images/icons/arrow-right.svg'
@@ -281,6 +262,7 @@ const Project = ({ element }: Props) => {
       />
       <AboutMeModal visible={modalState.aboutMeModal} onClose={closeModal} />
       <SideGoModal visible={modalState.sideGoModal} onClose={closeModal} />
+      <TodoModal visible={modalState.todoModal} onClose={closeModal} />
     </Container>
   );
 };
