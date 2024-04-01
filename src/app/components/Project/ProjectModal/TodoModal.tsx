@@ -10,6 +10,33 @@ type Props = {
   onClose: () => void;
 };
 
+const images = [
+  {
+    id: 1,
+    src: "/images/todo/todo1.png",
+  },
+  {
+    id: 2,
+    src: "/images/todo/todo2.png",
+  },
+  {
+    id: 3,
+    src: "/images/todo/todo3.png",
+  },
+  {
+    id: 4,
+    src: "/images/todo/todo4.png",
+  },
+  {
+    id: 5,
+    src: "/images/todo/todo5.png",
+  },
+  {
+    id: 6,
+    src: "/images/todo/todo6.png",
+  },
+];
+
 const TodoModal = ({ visible, onClose }: Props) => {
   return (
     <ProjectModal
@@ -25,7 +52,7 @@ const TodoModal = ({ visible, onClose }: Props) => {
     >
       <Container>
         <div className='project'>
-          {/* <ImageSwiper images={images} onClose={onClose} /> */}
+          <ImageSwiper images={images} onClose={onClose} />
         </div>
         <div
           style={{
@@ -67,7 +94,7 @@ const TodoModal = ({ visible, onClose }: Props) => {
 
           <div className='title'>Get</div>
           <div className='content'>
-            CRUD, infinite scroll, datePicker 등 다양한 기능을 넣었습니다.
+            CRUD, datePicker 라이브러리 사용 & 커스터마이징, zustand로 상태관리
             <br />
             <br />
             Todo 등록 시 날짜를 추가하여 디데이를 계산할 수 있도록 했습니다.

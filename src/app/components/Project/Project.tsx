@@ -167,7 +167,8 @@ const Project = ({ element }: Props) => {
           <div style={{ display: "flex", gap: 12 }}>
             <div className='stack'>Next.js</div>
             <div className='stack'>TypeScript</div>
-            <div className='stack'>Styled Component</div>
+            <div className='stack'>React-Query</div>
+            <div className='stack'>Zustand</div>
             <div className='stack'>Emotion</div>
           </div>
           <Link
@@ -205,15 +206,21 @@ const Project = ({ element }: Props) => {
           <div style={{ display: "flex", gap: 12 }}>
             <div className='stack'>Next.js</div>
             <div className='stack'>TypeScript</div>
-            <div className='stack'>Styled Component</div>
             <div className='stack'>Emotion</div>
+            <div className='stack'>Zustand</div>
           </div>
-          <Image
-            src='/images/contact/gitHub_active.svg'
-            width={24}
-            height={24}
-            alt='git'
-          />
+          <Link
+            href='https://github.com/magok-developer/Todo-project'
+            target='_blank'
+            style={{ width: "24px" }}
+          >
+            <Image
+              src='/images/contact/gitHub_active.svg'
+              width={24}
+              height={24}
+              alt='git'
+            />
+          </Link>
         </Wrap>
       </Grid>
 
@@ -243,7 +250,6 @@ const Project = ({ element }: Props) => {
           <div style={{ display: "flex", gap: 12 }}>
             <div className='stack'>Next.js</div>
             <div className='stack'>TypeScript</div>
-            <div className='stack'>Styled Component</div>
             <div className='stack'>Emotion</div>
           </div>
           <Image
