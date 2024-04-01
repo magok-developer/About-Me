@@ -88,6 +88,16 @@ const Frontend = ({ element }: Props) => {
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <Image
+            src='/images/skills/zustand.png'
+            width={30}
+            height={30}
+            alt='zustand'
+          />
+          <ProgressBar name='fe' value={20} />
+          <Text>Zustand</Text>
+        </div>
+        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          <Image
             src='/images/skills/StyledComponents.svg'
             width={30}
             height={30}
