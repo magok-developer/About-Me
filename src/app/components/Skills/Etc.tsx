@@ -25,7 +25,7 @@ const Etc = () => {
             height={30}
             alt='postman'
           />
-          <ProgressBar name='etc' value={60} />
+          <ProgressBar name='etc' value={40} />
           <Text>Postman</Text>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -45,8 +45,28 @@ const Etc = () => {
             height={30}
             alt='Figma'
           />
-          <ProgressBar name='etc' value={60} />
+          <ProgressBar name='etc' value={50} />
           <Text>Figma</Text>
+        </div>
+        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          <Image
+            src='/images/skills/photoshop.png'
+            width={30}
+            height={30}
+            alt='photoshop'
+          />
+          <ProgressBar name='etc' value={50} />
+          <Text>Photoshop</Text>
+        </div>
+        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          <Image
+            src='/images/skills/illustrator.svg'
+            width={30}
+            height={30}
+            alt='illustrator'
+          />
+          <ProgressBar name='etc' value={20} />
+          <Text>Illustrator</Text>
         </div>
       </div>
     </Container>

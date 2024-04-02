@@ -106,6 +106,16 @@ const Frontend = ({ element }: Props) => {
           <ProgressBar name='fe' value={65} />
           <Text>Styled-Components</Text>
         </div>
+        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          <Image
+            src='/images/skills/emotion.png'
+            width={30}
+            height={30}
+            alt='emotion'
+          />
+          <ProgressBar name='fe' value={65} />
+          <Text>Emotion</Text>
+        </div>
       </div>
     </Container>
   );
