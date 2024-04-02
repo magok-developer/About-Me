@@ -136,7 +136,7 @@ const Project = ({ element }: Props) => {
             <div className='stack'>Next.js</div>
             <div className='stack'>TypeScript</div>
             <div className='stack'>React-query</div>
-            <div className='stack'>Styled Component</div>
+            <div className='stack'>Zustand</div>
             <div className='stack'>Emotion</div>
           </div>
           <Image
@@ -167,8 +167,6 @@ const Project = ({ element }: Props) => {
           <div style={{ display: "flex", gap: 12 }}>
             <div className='stack'>Next.js</div>
             <div className='stack'>TypeScript</div>
-            <div className='stack'>React-Query</div>
-            <div className='stack'>Zustand</div>
             <div className='stack'>Emotion</div>
           </div>
           <Link
