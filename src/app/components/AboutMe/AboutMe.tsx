@@ -15,59 +15,85 @@ const AboutMe = ({ element }: Props) => {
     <Container ref={element}>
       <div className='title'>About Me</div>
 
-      <div style={{ display: "flex", gap: "100px" }}>
-        <SubIntroWrap>
-          <Image
-            src='/images/icons/user.svg'
-            width={30}
-            height={30}
-            alt='user'
-          />
-          <div className='content-wrap'>
-            <div className='content-title'>이름</div>
-            <div className='content'>하지원</div>
-          </div>
-        </SubIntroWrap>
+      <div style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
+        <div style={{ display: "flex", gap: "160px" }}>
+          <SubIntroWrap>
+            <Image
+              src='/images/icons/user.svg'
+              width={20}
+              height={20}
+              alt='user'
+            />
+            <div className='content-wrap'>
+              <div className='content-title'>이름</div>
+              <div className='content'>하지원</div>
+            </div>
+          </SubIntroWrap>
 
-        <SubIntroWrap>
-          <Image
-            src='/images/icons/calendar.svg'
-            width={30}
-            height={30}
-            alt='calendar'
-          />
-          <div className='content-wrap'>
-            <div className='content-title'>생년월일</div>
-            <div className='content'>1998.12.03</div>
-          </div>
-        </SubIntroWrap>
+          <SubIntroWrap>
+            <Image
+              src='/images/icons/calendar.svg'
+              width={20}
+              height={20}
+              alt='calendar'
+            />
+            <div className='content-wrap'>
+              <div className='content-title'>생년월일</div>
+              <div className='content'>1998.12.03</div>
+            </div>
+          </SubIntroWrap>
 
-        <SubIntroWrap>
-          <Image
-            src='/images/icons/house.svg'
-            width={30}
-            height={30}
-            alt='house'
-          />
-          <div className='content-wrap'>
-            <div className='content-title'>주소지</div>
-            <div className='content'>서울시 강서구</div>
-          </div>
-        </SubIntroWrap>
+          <SubIntroWrap>
+            <Image
+              src='/images/icons/house.svg'
+              width={20}
+              height={20}
+              alt='house'
+            />
+            <div className='content-wrap'>
+              <div className='content-title'>주소지</div>
+              <div className='content'>서울시 강서구</div>
+            </div>
+          </SubIntroWrap>
+        </div>
+        <div
+          style={{ display: "flex", justifyContent: "center", gap: "100px" }}
+        >
+          <SubIntroWrap>
+            <Image
+              src='/images/icons/camp.svg'
+              width={20}
+              height={20}
+              alt='house'
+            />
+            <div className='content-wrap'>
+              <div className='content-title'>부트캠프</div>
+              <div className='content'>
+                엘리스 코딩 SW 엔지니어 트랙 6기 수료
+              </div>
+            </div>
+          </SubIntroWrap>
 
-        <SubIntroWrap>
-          <Image
-            src='/images/icons/camp.svg'
-            width={30}
-            height={30}
-            alt='house'
-          />
-          <div className='content-wrap'>
-            <div className='content-title'>부트캠프</div>
-            <div className='content'>엘리스 코딩 SW 엔지니어 트랙 6기 수료</div>
-          </div>
-        </SubIntroWrap>
+          <SubIntroWrap>
+            <Image
+              src='/images/contact/notion.png'
+              width={18}
+              height={18}
+              alt='notion'
+            />
+            <div className='content-wrap'>
+              <div className='content-title'>이력서</div>
+              <a
+                href='https://giddy-product-b00.notion.site/1248f4226cca4b8aaf0d694951985aad?pvs=74'
+                target='_blank'
+              >
+                <div className='content'>노션 이력서 바로가기 </div>
+              </a>
+            </div>
+          </SubIntroWrap>
+        </div>
       </div>
+
       <Grid>
         <Image
           src='/images/photo.jpg'
@@ -75,6 +101,7 @@ const AboutMe = ({ element }: Props) => {
           height={340}
           alt='증명사진'
         />
+
         <Content>
           <h3 className={isInViewport ? "animate" : ""} ref={ref}>
             안녕하세요. 주니어 프론트엔드 개발자 하지원 입니다.
@@ -121,13 +148,13 @@ const frameInAnimation = keyframes`
 `;
 
 const Container = styled.div`
-  height: 700px;
+  height: 800px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 80px;
 
   .title {
     font-size: 32px;
@@ -161,21 +188,26 @@ const Container = styled.div`
 
 const SubIntroWrap = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 12px;
 
   .content-wrap {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
   }
 
   .content-title {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
   }
 
   .content {
-    font-size: 16px;
+    font-size: 14px;
+  }
+  a .content {
+    &:hover {
+      color: ${color.pointBlue};
+    }
   }
 `;
 
@@ -185,9 +217,6 @@ const Grid = styled.div`
   justify-content: flex-start;
 
   gap: 80px;
-
-  .content {
-  }
 `;
 
 const Content = styled.div`
