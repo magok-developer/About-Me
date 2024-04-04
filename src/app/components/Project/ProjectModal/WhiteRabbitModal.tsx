@@ -3,7 +3,7 @@ import ProjectModal from "./ProjectModal";
 import styled from "@emotion/styled";
 import { color } from "@/app/styles/color";
 
-import ImageSwiper from "../../../../components/Swiper/Swiper";
+import Slick from "@/components/Slick/Slick";
 
 type Props = {
   visible: boolean;
@@ -75,7 +75,7 @@ const WhiteRabbitModal = ({ visible, onClose }: Props) => {
     >
       <Container>
         <div className='project'>
-          <ImageSwiper images={images} onClose={onClose} />
+          <Slick images={images} />
         </div>
         <div
           style={{
@@ -160,9 +160,9 @@ const Container = styled.div`
 
   .project {
     width: 400px;
-    height: 500px;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .title {
     font-size: 16px;

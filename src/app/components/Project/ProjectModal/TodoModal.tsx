@@ -3,7 +3,7 @@ import ProjectModal from "./ProjectModal";
 import styled from "@emotion/styled";
 import { color } from "@/app/styles/color";
 
-import ImageSwiper from "../../../../components/Swiper/Swiper";
+import Slick from "@/components/Slick/Slick";
 
 type Props = {
   visible: boolean;
@@ -52,7 +52,7 @@ const TodoModal = ({ visible, onClose }: Props) => {
     >
       <Container>
         <div className='project'>
-          <ImageSwiper images={images} onClose={onClose} />
+          <Slick images={images} />
         </div>
         <div
           style={{
@@ -76,7 +76,7 @@ const TodoModal = ({ visible, onClose }: Props) => {
           </div>
           <ContentWrap>
             <div className='title'>진행 기간 |</div>
-            <div className='content'>2023.10.2 ~ 2023.10.13</div>
+            <div className='content'>2024.03.28 ~ 2024.03.31</div>
           </ContentWrap>
           <ContentWrap>
             <div className='title'>포지션 |</div>
@@ -122,7 +122,6 @@ const Container = styled.div`
 
   .project {
     width: 400px;
-    height: 500px;
     display: flex;
     justify-content: center;
   }

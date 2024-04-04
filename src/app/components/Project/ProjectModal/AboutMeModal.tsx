@@ -1,9 +1,7 @@
-import Image from "next/image";
 import ProjectModal from "./ProjectModal";
 import styled from "@emotion/styled";
 import { color } from "@/app/styles/color";
-
-import ImageSwiper from "../../../../components/Swiper/Swiper";
+import Slick from "@/components/Slick/Slick";
 
 type Props = {
   visible: boolean;
@@ -11,6 +9,28 @@ type Props = {
 };
 
 const AboutMe = ({ visible, onClose }: Props) => {
+  const images = [
+    {
+      id: 1,
+      src: "/images/reBirth/1.jpg",
+    },
+    {
+      id: 2,
+      src: "/images/reBirth/2.jpg",
+    },
+    {
+      id: 3,
+      src: "/images/reBirth/3.jpg",
+    },
+    {
+      id: 4,
+      src: "/images/reBirth/4.jpg",
+    },
+    {
+      id: 5,
+      src: "/images/reBirth/상장.jpg",
+    },
+  ];
   return (
     <ProjectModal
       style={{
@@ -24,7 +44,9 @@ const AboutMe = ({ visible, onClose }: Props) => {
       onClose={onClose}
     >
       <Container>
-        <div className='project'></div>
+        <div className='project'>
+          <Slick images={images} />
+        </div>
         <div
           style={{
             display: "flex",
@@ -74,7 +96,6 @@ const Container = styled.div`
 
   .project {
     width: 400px;
-    height: 500px;
     display: flex;
     justify-content: center;
   }
