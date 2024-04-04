@@ -38,8 +38,8 @@ const Slick = ({ images }: SlickProps) => {
   return (
     <Container>
       <Slider {...settings}>
-        {images.map((item) => (
-          <img src={item.src} />
+        {images.map((item, index) => (
+          <img key={`${item.id}_${index}`} src={item.src} />
         ))}
       </Slider>
     </Container>
