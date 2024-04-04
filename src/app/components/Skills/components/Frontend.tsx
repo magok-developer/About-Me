@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import styled from "@emotion/styled";
-import ProgressBar from "../../../components/Progress/ProgressBar";
+import ProgressBar from "../../../../components/Progress/ProgressBar";
 import Image from "next/image";
 import { useScrollAnimation } from "@/app/hook/useScrollAnimation";
 

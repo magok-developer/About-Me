@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from "@emotion/styled";
-import ProgressBar from "../../../components/Progress/ProgressBar";
+import ProgressBar from "../../../../components/Progress/ProgressBar";
 import Image from "next/image";
 
 const Etc = () => {
@@ -60,7 +60,7 @@ const Etc = () => {
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <Image
-            src='/images/skills/illustrator.svg'
+            src='/images/skills/illustrator.png'
             width={30}
             height={30}
             alt='illustrator'

@@ -2,8 +2,8 @@ import { color } from "@/app/styles/color";
 import styled from "@emotion/styled";
 
 import React from "react";
-import Frontend from "./Frontend";
-import Etc from "./Etc";
+import Frontend from "./components/Frontend";
+import Etc from "./components/Etc";
 
 type Props = {
   element: () => void;
@@ -40,7 +40,7 @@ const Skills = ({ element }: Props) => {
 export default Skills;
 
 const Container = styled.div`
-  height: 700px;
+  height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
