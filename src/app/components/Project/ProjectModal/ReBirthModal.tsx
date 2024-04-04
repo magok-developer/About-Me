@@ -81,7 +81,7 @@ const ReBirthModal = ({ visible, onClose }: Props) => {
 
           <div className='title'>Summary</div>
           <div className='content'>
-            개발 공부를 본격적으로 시작한 뒤 진행 된 첫 프로젝트 였습니다.
+            개발 공부를 본격적으로 시작한 뒤 진행 된 첫 팀 프로젝트 였습니다.
             <br />
             모든 팀이 쇼핑몰이라는 공통 주제를 가지고 진행 하였으며, 제가 속했던
             2팀에서는 업사이클링 제품을 판매하는 쇼핑몰을 제작하였습니다.

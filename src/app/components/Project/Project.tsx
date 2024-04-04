@@ -149,7 +149,7 @@ const Project = ({ element }: Props) => {
       </Grid>
 
       <Grid>
-        <img src='/images/aboutMe.png' className='preview' />
+        <img src='/images/aboutMe/aboutMe.png' className='preview' />
         <Wrap>
           <TitleWrap onClick={() => openModal("aboutMeModal")}>
             <div className='project-title'>About Me</div>
