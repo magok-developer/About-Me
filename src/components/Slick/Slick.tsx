@@ -13,28 +13,43 @@ type SlickProps = {
 };
 
 const Slick = ({ images }: SlickProps) => {
+  const PrevArrow = (props: any) => {
+    const { className, onClick } = props;
+    return (
+      <Image
+        className={className}
+        src={"/images/icons/arrowCircle-left.svg"}
+        alt='left_arrow'
+        width={20}
+        height={20}
+        onClick={onClick}
+      />
+    );
+  };
+
+  const NextArrow = (props: any) => {
+    const { className, onClick } = props;
+    return (
+      <Image
+        className={className}
+        src={"/images/icons/arrowCircle-right.svg"}
+        alt='right_arrow'
+        width={20}
+        height={20}
+        onClick={onClick}
+      />
+    );
+  };
+
   const settings = {
+    dots: true,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: (
-      <Image
-        src='/images/icons/arrowCircle-left.svg'
-        width={30}
-        height={30}
-        alt='arrow'
-      />
-    ),
-    nextArrow: (
-      <Image
-        src='/images/icons/arrowCircle-right.svg'
-        width={30}
-        height={30}
-        alt='arrow'
-      />
-    ),
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
+
   return (
     <Container>
       <Slider {...settings}>
