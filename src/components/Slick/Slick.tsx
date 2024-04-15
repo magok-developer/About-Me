@@ -23,6 +23,7 @@ const Slick = ({ images }: SlickProps) => {
         width={20}
         height={20}
         onClick={onClick}
+        style={{ transform: "rotate(180deg)" }}
       />
     );
   };
