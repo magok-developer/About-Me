@@ -8,6 +8,7 @@ import AboutMeModal from "./ProjectModal/AboutMeModal";
 import SideGoModal from "./ProjectModal/SideGoModal";
 import Link from "next/link";
 import TodoModal from "./ProjectModal/TodoModal";
+import MyHomeModal from "./ProjectModal/MyHomeModal";
 
 type Props = {
   element: () => void;
@@ -19,6 +20,7 @@ const initialModalState = {
   sideGoModal: false,
   aboutMeModal: false,
   todoModal: false,
+  myHomeModal: false,
 };
 
 const Project = ({ element }: Props) => {
@@ -116,7 +118,7 @@ const Project = ({ element }: Props) => {
       </Grid>
 
       <Grid>
-        <img src='/images/sideGo.png' className='preview' />
+        <img src='/images/sideGo/sideGo.png' className='preview' />
         <Wrap>
           <TitleWrap onClick={() => openModal("sideGoModal")}>
             <div className='project-title'>SideGo</div>
@@ -223,17 +225,11 @@ const Project = ({ element }: Props) => {
       </Grid>
 
       <Grid>
-        {/* <img src='/images/aboutMe.png' className='preview' /> */}
-        <div
-          style={{
-            width: "500px",
-            height: "235.97px",
-            background: color.pointGray,
-          }}
-        />
+        <img src='/images/myHome/myHome.png' className='preview' />
+
         <Wrap>
-          <TitleWrap>
-            <div className='project-title'>진행할 프로젝트 넣기</div>
+          <TitleWrap onClick={() => openModal("myHomeModal")}>
+            <div className='project-title'>My Home</div>
             <Image
               src='/images/icons/arrow-right.svg'
               width={20}
@@ -242,20 +238,26 @@ const Project = ({ element }: Props) => {
             />
           </TitleWrap>
           <div className='content'>
-            포트폴리오 정리를 위해 진행한 프로젝트 입니다. <br />
-            프로젝트는 약 1주간 진행 되었습니다.
+            공공 API를 이용해서 진행된 1인 프로젝트입니다.
           </div>
           <div style={{ display: "flex", gap: 12 }}>
             <div className='stack'>Next.js</div>
             <div className='stack'>TypeScript</div>
+            <div className='stack'>React-Query</div>
             <div className='stack'>Emotion</div>
           </div>
-          <Image
-            src='/images/contact/gitHub_active.svg'
-            width={24}
-            height={24}
-            alt='git'
-          />
+          <Link
+            href='https://github.com/magok-developer/myHome-project'
+            target='_blank'
+            style={{ width: "24px" }}
+          >
+            <Image
+              src='/images/contact/gitHub_active.svg'
+              width={24}
+              height={24}
+              alt='git'
+            />
+          </Link>
         </Wrap>
       </Grid>
 
@@ -267,6 +269,7 @@ const Project = ({ element }: Props) => {
       <AboutMeModal visible={modalState.aboutMeModal} onClose={closeModal} />
       <SideGoModal visible={modalState.sideGoModal} onClose={closeModal} />
       <TodoModal visible={modalState.todoModal} onClose={closeModal} />
+      <MyHomeModal visible={modalState.myHomeModal} onClose={closeModal} />
     </Container>
   );
 };
@@ -317,7 +320,6 @@ const TitleWrap = styled.div`
   .project-title {
     font-size: 20px;
     font-weight: bold;
-    transition: 0.3s;
   }
 `;
 
