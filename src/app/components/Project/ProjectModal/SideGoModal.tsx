@@ -13,23 +13,7 @@ const SideGoModal = ({ visible, onClose }: Props) => {
   const images = [
     {
       id: 1,
-      src: "/images/reBirth/1.jpg",
-    },
-    {
-      id: 2,
-      src: "/images/reBirth/2.jpg",
-    },
-    {
-      id: 3,
-      src: "/images/reBirth/3.jpg",
-    },
-    {
-      id: 4,
-      src: "/images/reBirth/4.jpg",
-    },
-    {
-      id: 5,
-      src: "/images/reBirth/상장.jpg",
+      src: "/images/sideGo/sideGo.png",
     },
   ];
   return (
@@ -69,7 +53,7 @@ const SideGoModal = ({ visible, onClose }: Props) => {
           </div>
           <ContentWrap>
             <div className='title'>진행 기간 |</div>
-            <div className='content'>2023.2 ~ 진행 중</div>
+            <div className='content'>2024.2 ~ 진행 중</div>
           </ContentWrap>
           <ContentWrap>
             <div className='title'>포지션 |</div>
@@ -94,7 +78,26 @@ const SideGoModal = ({ visible, onClose }: Props) => {
           </div>
 
           <div className='title'>Get</div>
-          <div className='content'>내용내용</div>
+          <div className='content'>
+            부트캠프에서 진행한 프로젝트는 개발자들끼리 기획과 디자인을 모두
+            담당했었습니다. 그러나 현업에서 일하고 있는 기획자와 디자이너와 함께
+            프로젝트를 진행하면서 많은 것을 배울 수 있는 좋은 기회였습니다.
+            <br />
+            <br />
+            단기로 진행하는 프로젝트에선 다른 포지션에 대한 이해도가 낮아 질문에
+            어려움이 있었으나, 장기적으로 보는 프로젝트이다보니 백엔드와의
+            밀접한 소통을 통해 백엔드에 대한 이해도를 높일 수 있었습니다.
+            <br />
+            <br />
+            Next.js, TypeScript, React Query 등 처음 사용해보는 기술 스택들을
+            도입하여 개발을 진행했습니다. 처음에는 공부와 병행하느라 개발 속도가
+            더딘 편이었지만, 현재는 가장 많이 사용하는 스택으로 자리잡을 정도로
+            많은 학습을 진행했습니다.
+            <br />
+            <br />
+            현재는 서비스를 실제로 배포하여 운영할 예정이며, 어드민 페이지를
+            개발 중에 있습니다.
+          </div>
         </div>
       </Container>
     </ProjectModal>
