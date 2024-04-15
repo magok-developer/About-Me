@@ -18,7 +18,7 @@ const Slick = ({ images }: SlickProps) => {
     return (
       <Image
         className={className}
-        src={"/images/icons/arrowCircle-left.svg"}
+        src={"/images/icons/arrowCircle-right.svg"}
         alt='left_arrow'
         width={20}
         height={20}
