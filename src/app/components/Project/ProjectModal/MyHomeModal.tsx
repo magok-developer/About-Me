@@ -31,6 +31,14 @@ const MyHomeModal = ({ visible, onClose }: Props) => {
       id: 5,
       src: "/images/myHome/public.png",
     },
+    {
+      id: 6,
+      src: "/images/myHome/aptDetail.png",
+    },
+    {
+      id: 7,
+      src: "/images/myHome/leftoverDetail.png",
+    },
   ];
   return (
     <ProjectModal
