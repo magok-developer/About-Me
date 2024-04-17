@@ -23,7 +23,7 @@ const Contact = ({ element }: Props) => {
     {
       icon: "/images/contact/linkedIn.svg",
       activeIcon: "/images/contact/linkedIn_active.svg",
-      url: "naver.com",
+      url: "https://www.linkedin.com/in/%EC%A7%80%EC%9B%90-%ED%95%98-83338725b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       copy: "",
     },
     {
