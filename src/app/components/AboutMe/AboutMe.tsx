@@ -345,14 +345,14 @@ const Grid = styled.div`
     gap: 30px;
     .id-photo {
       width: 200px;
-      height: 240px;
+      height: 224px;
     }
   }
   @media (min-width: 480px) and (max-width: 600px) {
     gap: 20px;
     .id-photo {
       width: 200px;
-      height: 240px;
+      height: 224px;
     }
   }
 
@@ -360,7 +360,7 @@ const Grid = styled.div`
     gap: 20px;
     .id-photo {
       width: 240px;
-      height: 280px;
+      height: 269px;
     }
   }
 
@@ -368,7 +368,7 @@ const Grid = styled.div`
     gap: 80px;
     .id-photo {
       width: 300px;
-      height: 340px;
+      height: 336px;
     }
   }
 `;
