@@ -35,7 +35,7 @@ export default Home;
 
 const Container = styled.div`
   width: 100%;
-  height: 700px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +45,21 @@ const Container = styled.div`
   font-weight: bold;
 
   background-color: ${color.pointBlue};
+
+  @media (max-width: 479px) {
+    height: 500px;
+  }
+  @media (min-width: 480px) and (max-width: 600px) {
+    height: 550px;
+  }
+
+  @media (min-width: 601px) and (max-width: 750px) {
+    height: 600px;
+  }
+
+  @media (min-width: 751px) {
+    height: 650px;
+  }
 `;
 
 const Text = styled.h1`
@@ -54,8 +69,6 @@ const Text = styled.h1`
     top: 20px;
     display: inline-block;
     animation: bounce 0.3s ease infinite alternate;
-
-    font-size: 80px;
     color: ${color.white};
     text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
       0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent,
@@ -100,6 +113,29 @@ const Text = styled.h1`
   }
   span:nth-child(14) {
     animation-delay: 1.3s;
+  }
+
+  @media (max-width: 479px) {
+    span {
+      font-size: 40px;
+    }
+  }
+  @media (min-width: 480px) and (max-width: 600px) {
+    span {
+      font-size: 40px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 750px) {
+    span {
+      font-size: 60px;
+    }
+  }
+
+  @media (min-width: 751px) {
+    span {
+      font-size: 80px;
+    }
   }
 
   @keyframes bounce {

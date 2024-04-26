@@ -105,7 +105,7 @@ const ToggleMenu = styled.div<{ showMenu: boolean }>`
 `;
 
 const ToggleContent = styled.div<{ isActive: boolean }>`
-  color: ${(props) => (props.isActive ? color.pointBlue : color.black)};
+  color: ${(props) => (props.isActive ? color.black : color.pointGray)};
   font-weight: bold;
 `;
 
@@ -215,7 +215,7 @@ const Content = styled.div<{ isActive: boolean }>`
     &:hover {
       background-color: ${color.pointBlue};
       color: ${color.white};
-      height: 200px;
+      height: 20px;
     }
   }
 

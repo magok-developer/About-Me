@@ -16,7 +16,7 @@ const AboutMe = ({ element }: Props) => {
       <div className='title'>About Me</div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
-        <div style={{ display: "flex", gap: "160px" }}>
+        <div className='info-wrap'>
           <SubIntroWrap>
             <Image
               src='/images/icons/user.svg'
@@ -57,7 +57,8 @@ const AboutMe = ({ element }: Props) => {
           </SubIntroWrap>
         </div>
         <div
-          style={{ display: "flex", justifyContent: "center", gap: "100px" }}
+          style={{ display: "flex", justifyContent: "center" }}
+          className='info-wrap'
         >
           <SubIntroWrap>
             <Image
@@ -95,12 +96,7 @@ const AboutMe = ({ element }: Props) => {
       </div>
 
       <Grid>
-        <Image
-          src='/images/photo.jpg'
-          width={300}
-          height={340}
-          alt='증명사진'
-        />
+        <img src='/images/photo.jpg' alt='증명사진' className='id-photo' />
 
         <Content>
           <h3 className={isInViewport ? "animate" : ""} ref={ref}>
@@ -148,7 +144,6 @@ const frameInAnimation = keyframes`
 `;
 
 const Container = styled.div`
-  height: 800px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -163,14 +158,92 @@ const Container = styled.div`
     color: ${color.black};
   }
 
-  h3.animate {
-    width: 355px;
-    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid;
-    font-size: 16px;
-    margin-bottom: 10px;
+  @media (max-width: 479px) {
+    height: 650px;
+    gap: 30px;
+    .title {
+      font-size: 24px;
+    }
+    .info-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+    h3.animate {
+      width: 265px;
+      animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  }
+  @media (min-width: 480px) and (max-width: 600px) {
+    height: 600px;
+    gap: 40px;
+    .title {
+      font-size: 28px;
+    }
+
+    .info-wrap {
+      display: flex;
+      gap: 80px;
+    }
+
+    h3.animate {
+      width: 265px;
+      animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 750px) {
+    height: 700px;
+    gap: 60px;
+    .title {
+      font-size: 30px;
+    }
+    .info-wrap {
+      display: flex;
+      gap: 100px;
+    }
+
+    h3.animate {
+      width: 310px;
+      animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 751px) {
+    height: 800px;
+    gap: 80px;
+    .title {
+      font-size: 32px;
+    }
+
+    .info-wrap {
+      display: flex;
+      gap: 160px;
+    }
+    h3.animate {
+      width: 355px;
+      animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 
   @keyframes typing {
@@ -190,23 +263,72 @@ const SubIntroWrap = styled.div`
   display: flex;
   gap: 12px;
 
-  .content-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .content-title {
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .content {
-    font-size: 14px;
-  }
   a .content {
     &:hover {
       color: ${color.pointBlue};
+    }
+  }
+
+  @media (max-width: 479px) {
+    .content-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .content-title {
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .content {
+      font-size: 10px;
+    }
+  }
+  @media (min-width: 480px) and (max-width: 600px) {
+    .content-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .content-title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .content {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 750px) {
+    .content-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .content-title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .content {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 751px) {
+    .content-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .content-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .content {
+      font-size: 14px;
     }
   }
 `;
@@ -217,11 +339,58 @@ const Grid = styled.div`
   justify-content: flex-start;
 
   gap: 80px;
+
+  @media (max-width: 479px) {
+    flex-direction: column;
+    gap: 30px;
+    .id-photo {
+      width: 200px;
+      height: 240px;
+    }
+  }
+  @media (min-width: 480px) and (max-width: 600px) {
+    gap: 20px;
+    .id-photo {
+      width: 200px;
+      height: 240px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 750px) {
+    gap: 20px;
+    .id-photo {
+      width: 240px;
+      height: 280px;
+    }
+  }
+
+  @media (min-width: 751px) {
+    gap: 80px;
+    .id-photo {
+      width: 300px;
+      height: 340px;
+    }
+  }
 `;
 
 const Content = styled.div`
   line-height: normal;
-  font-size: 14px;
+
+  @media (max-width: 479px) {
+    font-size: 11px;
+  }
+  @media (min-width: 480px) and (max-width: 600px) {
+    font-size: 11px;
+  }
+
+  @media (min-width: 601px) and (max-width: 750px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 751px) {
+    font-size: 14px;
+  }
+
   .highlight {
     display: inline-block;
     position: relative;
