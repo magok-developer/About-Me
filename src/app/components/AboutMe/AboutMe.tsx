@@ -170,7 +170,7 @@ const Container = styled.div`
       gap: 40px;
     }
     h3.animate {
-      width: 265px;
+      width: 270px;
       animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
       white-space: nowrap;
       overflow: hidden;
@@ -192,7 +192,7 @@ const Container = styled.div`
     }
 
     h3.animate {
-      width: 265px;
+      width: 270px;
       animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
       white-space: nowrap;
       overflow: hidden;
