@@ -13,4 +13,5 @@ const Container = styled.div`
   height: 85%;
   overflow: scroll;
   z-index: 3;
+  width: 100%;
 `;

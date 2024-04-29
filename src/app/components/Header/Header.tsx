@@ -80,13 +80,13 @@ const MobileToggle = styled.button`
 
   background: none;
   border: none;
-  z-index: 9999;
+  z-index: 4;
   cursor: pointer;
   display: flex;
   justify-content: end;
 
   @media (min-width: 480px) {
-    display: none; /* Hide the toggle button on desktop */
+    display: none;
   }
 `;
 
@@ -111,7 +111,7 @@ const ToggleContent = styled.div<{ isActive: boolean }>`
 
 const DesktopHeader = styled.div`
   @media (max-width: 479px) {
-    display: none; /* Hide the header on mobile */
+    display: none;
   }
   @media (min-width: 480px) and (max-width: 600px) {
     margin-top: 20px;

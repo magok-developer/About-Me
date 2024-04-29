@@ -37,14 +37,61 @@ const Project = ({ element }: Props) => {
     setModalState(initialModalState);
   };
 
+  const handleTitleClick = (modalName: string) => {
+    if (window.innerWidth <= 750) {
+      switch (modalName) {
+        case "reBirthModal":
+          window.open(
+            "https://giddy-product-b00.notion.site/Re-Birth-0cfd02c7f289451b98566a6185713123",
+            "_blank"
+          );
+          break;
+        case "whiteRabbitModal":
+          window.open(
+            "https://giddy-product-b00.notion.site/White-Rabbit-2eeb9afd2ccc47928b56f660bfbe6102",
+            "_blank"
+          );
+          break;
+        case "sideGoModal":
+          window.open(
+            "https://giddy-product-b00.notion.site/SideGo-b2c6d92e06cb4ed5a67145156f35cb03",
+            "_blank"
+          );
+          break;
+        case "aboutMeModal":
+          window.open(
+            "https://giddy-product-b00.notion.site/About-Me-13f94b3a6032445592c72026d57869c6",
+            "_blank"
+          );
+          break;
+        case "todoModal":
+          window.open(
+            "https://giddy-product-b00.notion.site/Todo-Diary-0bb779e056794c63b43e5c5374ecb3b4",
+            "_blank"
+          );
+          break;
+        case "myHomeModal":
+          window.open(
+            "https://giddy-product-b00.notion.site/My-Home-1afaef8d6633474da6f584cd70e74d93",
+            "_blank"
+          );
+          break;
+        default:
+          break;
+      }
+    } else {
+      openModal(modalName);
+    }
+  };
+
   return (
     <Container ref={element}>
-      <div className='title'>Project</div>
+      <div className='main-title'>Project</div>
 
       <Grid>
         <img src='/images/reBirth/reBirth.png' className='preview' />
         <Wrap>
-          <TitleWrap onClick={() => openModal("reBirthModal")}>
+          <TitleWrap onClick={() => handleTitleClick("reBirthModal")}>
             <div className='project-title'>Re:Birth</div>
             <Image
               src='/images/icons/arrow-right.svg'
@@ -82,7 +129,7 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/whiteRabbit/whiteRabbit.png' className='preview' />
         <Wrap>
-          <TitleWrap onClick={() => openModal("whiteRabbitModal")}>
+          <TitleWrap onClick={() => handleTitleClick("whiteRabbitModal")}>
             <div className='project-title'>White Rabbit</div>
             <Image
               src='/images/icons/arrow-right.svg'
@@ -120,7 +167,7 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/sideGo/sideGo.png' className='preview' />
         <Wrap>
-          <TitleWrap onClick={() => openModal("sideGoModal")}>
+          <TitleWrap onClick={() => handleTitleClick("sideGoModal")}>
             <div className='project-title'>SideGo</div>
             <Image
               src='/images/icons/arrow-right.svg'
@@ -153,7 +200,7 @@ const Project = ({ element }: Props) => {
       <Grid>
         <img src='/images/aboutMe/aboutMe.png' className='preview' />
         <Wrap>
-          <TitleWrap onClick={() => openModal("aboutMeModal")}>
+          <TitleWrap onClick={() => handleTitleClick("aboutMeModal")}>
             <div className='project-title'>About Me</div>
             <Image
               src='/images/icons/arrow-right.svg'
@@ -190,7 +237,7 @@ const Project = ({ element }: Props) => {
         <img src='/images/todo/todo.png' className='preview' />
 
         <Wrap>
-          <TitleWrap onClick={() => openModal("todoModal")}>
+          <TitleWrap onClick={() => handleTitleClick("todoModal")}>
             <div className='project-title'>Todo & Diary</div>
             <Image
               src='/images/icons/arrow-right.svg'
@@ -228,7 +275,7 @@ const Project = ({ element }: Props) => {
         <img src='/images/myHome/myHome.png' className='preview' />
 
         <Wrap>
-          <TitleWrap onClick={() => openModal("myHomeModal")}>
+          <TitleWrap onClick={() => handleTitleClick("myHomeModal")}>
             <div className='project-title'>My Home</div>
             <Image
               src='/images/icons/arrow-right.svg'
@@ -277,29 +324,74 @@ const Project = ({ element }: Props) => {
 export default Project;
 
 const Container = styled.div`
-  height: 2300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 100px;
 
-  .title {
-    font-size: 32px;
+  .main-title {
     font-weight: bold;
+    color: ${color.pointBlue};
+  }
 
-    color: ${color.black};
+  @media (max-width: 479px) {
+    height: 2800px;
+    gap: 60px;
+    .main-title {
+      font-size: 24px;
+    }
+  }
+  @media (min-width: 480px) and (max-width: 600px) {
+    height: 3000px;
+    gap: 60px;
+    .main-title {
+      font-size: 24px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 750px) {
+    height: 3600px;
+    gap: 60px;
+    .main-title {
+      font-size: 30px;
+    }
+  }
+
+  @media (min-width: 751px) {
+    height: 2300px;
+    gap: 100px;
+    .main-title {
+      font-size: 32px;
+      margin-top: 40px;
+    }
   }
 `;
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  .preview {
-    width: 500px;
-    height: 100%;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .preview {
+      width: 90%;
+      height: 100%;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (min-width: 751px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 650px;
+    gap: 40px;
+
+    .preview {
+      width: 500px;
+      height: 100%;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    }
   }
 `;
 
@@ -312,14 +404,25 @@ const TitleWrap = styled.div`
 
   transition: 0.3s;
 
-  &:hover {
-    color: ${color.pointBlue};
-    gap: 30px;
+  .project-title {
+    font-weight: bold;
   }
 
-  .project-title {
-    font-size: 20px;
-    font-weight: bold;
+  @media (max-width: 750px) {
+    .project-title {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 751px) {
+    .project-title {
+      font-size: 20px;
+    }
+
+    &:hover {
+      color: ${color.pointBlue};
+      gap: 30px;
+    }
   }
 `;
 
@@ -329,7 +432,6 @@ const Wrap = styled.div`
   justify-content: space-between;
 
   .stack {
-    font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -347,7 +449,28 @@ const Wrap = styled.div`
     }
   }
   .content {
-    font-size: 14px;
     line-height: 150%;
+  }
+
+  @media (max-width: 750px) {
+    width: 90%;
+    .content {
+      font-size: 12px;
+      margin-top: 2px;
+      height: 54px;
+    }
+    .stack {
+      margin-bottom: 20px;
+      font-size: 8px;
+    }
+  }
+
+  @media (min-width: 751px) {
+    .content {
+      font-size: 14px;
+    }
+    .stack {
+      font-size: 12px;
+    }
   }
 `;
