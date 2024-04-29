@@ -3,17 +3,14 @@ import React, { useRef } from "react";
 import styled from "@emotion/styled";
 import ProgressBar from "../../../../components/Progress/ProgressBar";
 import Image from "next/image";
-import { useScrollAnimation } from "@/app/hook/useScrollAnimation";
 
 type Props = {
-  element: any;
+  frontSkillView: boolean;
 };
 
-const Frontend = ({ element }: Props) => {
-  const { ref, isInViewport } = useScrollAnimation(element);
-
+const Frontend = ({ frontSkillView }: Props) => {
   return (
-    <Container>
+    <Container frontSkillView={frontSkillView}>
       <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <Image
@@ -123,8 +120,8 @@ const Frontend = ({ element }: Props) => {
 
 export default Frontend;
 
-const Container = styled.div`
-  display: flex;
+const Container = styled.div<{ frontSkillView: boolean }>`
+  display: ${({ frontSkillView }) => (frontSkillView ? "flex" : "none")};
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -132,6 +129,20 @@ const Container = styled.div`
 `;
 
 const Text = styled.div`
-  font-size: 14px;
   font-weight: bold;
+
+  @media (max-width: 479px) {
+    font-size: 10px;
+  }
+  @media (min-width: 480px) and (max-width: 600px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 601px) and (max-width: 750px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 751px) {
+    font-size: 14px;
+  }
 `;

@@ -4,9 +4,13 @@ import styled from "@emotion/styled";
 import ProgressBar from "../../../../components/Progress/ProgressBar";
 import Image from "next/image";
 
-const Etc = () => {
+type Props = {
+  etcSkillView: boolean;
+};
+
+const Etc = ({ etcSkillView }: Props) => {
   return (
-    <Container>
+    <Container etcSkillView={etcSkillView}>
       <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <Image
@@ -75,8 +79,8 @@ const Etc = () => {
 
 export default Etc;
 
-const Container = styled.div`
-  display: flex;
+const Container = styled.div<{ etcSkillView: boolean }>`
+  display: ${({ etcSkillView }) => (etcSkillView ? "flex" : "none")};
   flex-direction: column;
 
   align-items: center;
@@ -84,6 +88,20 @@ const Container = styled.div`
 `;
 
 const Text = styled.div`
-  font-size: 14px;
   font-weight: bold;
+
+  @media (max-width: 479px) {
+    font-size: 10px;
+  }
+  @media (min-width: 480px) and (max-width: 600px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 601px) and (max-width: 750px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 751px) {
+    font-size: 14px;
+  }
 `;

@@ -152,9 +152,7 @@ const Container = styled.div`
   gap: 80px;
 
   .title {
-    font-size: 32px;
     font-weight: bold;
-
     color: ${color.black};
   }
 
@@ -163,6 +161,7 @@ const Container = styled.div`
     gap: 30px;
     .title {
       font-size: 24px;
+      color: ${color.pointBlue};
     }
     .info-wrap {
       display: flex;
@@ -170,12 +169,12 @@ const Container = styled.div`
       gap: 40px;
     }
     h3.animate {
-      width: 270px;
+      width: 245px;
       animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid;
-      font-size: 12px;
+      font-size: 11px;
       margin-bottom: 10px;
     }
   }
