@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect } from "react";
-import { useObserver } from "./useObserver";
 
 export const useScrollAnimation = ({ element }: any) => {
   const [isInViewport, setIsInViewport] = useState(false);
