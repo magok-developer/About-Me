@@ -335,13 +335,29 @@ const Container = styled.div`
   }
 
   @media (max-width: 479px) {
+    height: 2600px;
+    gap: 60px;
+    .main-title {
+      font-size: 24px;
+    }
+  }
+  @media (min-width: 480px) and (max-width: 500px) {
+    height: 2700px;
+    gap: 60px;
+    .main-title {
+      font-size: 24px;
+    }
+  }
+
+  @media (min-width: 501px) and (max-width: 550px) {
     height: 2800px;
     gap: 60px;
     .main-title {
       font-size: 24px;
     }
   }
-  @media (min-width: 480px) and (max-width: 600px) {
+
+  @media (min-width: 551px) and (max-width: 600px) {
     height: 3000px;
     gap: 60px;
     .main-title {
@@ -349,8 +365,16 @@ const Container = styled.div`
     }
   }
 
-  @media (min-width: 601px) and (max-width: 750px) {
-    height: 3600px;
+  @media (min-width: 601px) and (max-width: 650px) {
+    height: 3200px;
+    gap: 60px;
+    .main-title {
+      font-size: 30px;
+    }
+  }
+
+  @media (min-width: 651px) and (max-width: 750px) {
+    height: 3400px;
     gap: 60px;
     .main-title {
       font-size: 30px;

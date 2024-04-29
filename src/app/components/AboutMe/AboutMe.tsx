@@ -85,7 +85,7 @@ const AboutMe = ({ element }: Props) => {
             <div className='content-wrap'>
               <div className='content-title'>이력서</div>
               <a
-                href='https://giddy-product-b00.notion.site/1248f4226cca4b8aaf0d694951985aad?pvs=74'
+                href='https://giddy-product-b00.notion.site/1248f4226cca4b8aaf0d694951985aad'
                 target='_blank'
               >
                 <div className='content'>노션 이력서 바로가기 </div>
@@ -168,12 +168,12 @@ const Container = styled.div`
       gap: 40px;
     }
     h3.animate {
-      width: 245px;
+      width: 250px;
       animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid;
-      font-size: 11px;
+      font-size: 10px;
       margin-bottom: 10px;
     }
   }
