@@ -32,7 +32,11 @@ const Skills = ({ element }: Props) => {
   };
 
   return (
-    <Container ref={element} frontSkillView={frontSkillView}>
+    <Container
+      ref={element}
+      frontSkillView={frontSkillView}
+      etcSkillView={etcSkillView}
+    >
       <div className='title'>Skills</div>
       <div
         className='skill-title-wrap'
@@ -40,10 +44,10 @@ const Skills = ({ element }: Props) => {
           display: "flex",
         }}
       >
-        <div className='skill-title' onClick={handleClickFrontSkill}>
+        <div className='skill-title-front' onClick={handleClickFrontSkill}>
           Frontend
         </div>
-        <div className='skill-title' onClick={handleClickEtcSkill}>
+        <div className='skill-title-etc' onClick={handleClickEtcSkill}>
           etc
         </div>
       </div>
@@ -60,7 +64,10 @@ const Skills = ({ element }: Props) => {
 
 export default Skills;
 
-const Container = styled.div<{ frontSkillView: boolean }>`
+const Container = styled.div<{
+  frontSkillView: boolean;
+  etcSkillView: boolean;
+}>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,8 +77,23 @@ const Container = styled.div<{ frontSkillView: boolean }>`
 
   .title {
     font-weight: bold;
+    color: ${color.pointBlue};
+  }
 
-    color: ${color.black};
+  .skill-title-front {
+    font-size: 16px;
+    color: ${({ frontSkillView }) =>
+      frontSkillView ? color.pointYellow : color.black};
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .skill-title-etc {
+    font-size: 16px;
+    color: ${({ etcSkillView }) =>
+      etcSkillView ? color.pointBlue : color.black};
+    font-weight: bold;
+    cursor: pointer;
   }
 
   @media (max-width: 479px) {
@@ -79,7 +101,6 @@ const Container = styled.div<{ frontSkillView: boolean }>`
 
     .title {
       font-size: 24px;
-      color: ${color.pointBlue};
     }
 
     .skill-title-wrap {
@@ -90,36 +111,67 @@ const Container = styled.div<{ frontSkillView: boolean }>`
 
     .skill-wrap {
       display: flex;
-      /* flex-direction: column; */
       justify-content: center;
       transition: height 0.5s ease-in-out;
-      /* overflow: hidden; */
     }
   }
   @media (min-width: 480px) and (max-width: 600px) {
-    height: 550px;
+    height: ${({ frontSkillView }) => (frontSkillView ? "700px" : "505px")};
 
     .title {
       font-size: 28px;
     }
+
+    .skill-title-wrap {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .skill-wrap {
+      display: flex;
+      justify-content: center;
+      transition: height 0.5s ease-in-out;
+    }
   }
 
   @media (min-width: 601px) and (max-width: 750px) {
-    height: 600px;
+    height: ${({ frontSkillView }) => (frontSkillView ? "650px" : "455px")};
 
     .title {
       font-size: 30px;
     }
-  }
 
-  @media (min-width: 751px) {
-    .title {
-      font-size: 32px;
+    .skill-title-wrap {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .skill-wrap {
+      display: flex;
+      justify-content: center;
+      transition: height 0.5s ease-in-out;
     }
   }
 
-  .skill-title {
-    font-size: 16px;
-    font-weight: bold;
+  @media (min-width: 751px) {
+    height: ${({ frontSkillView }) => (frontSkillView ? "650px" : "455px")};
+
+    .title {
+      font-size: 32px;
+    }
+
+    .skill-title-wrap {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .skill-wrap {
+      display: flex;
+      justify-content: center;
+      transition: height 0.5s ease-in-out;
+    }
   }
 `;

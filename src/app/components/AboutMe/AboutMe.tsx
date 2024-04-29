@@ -153,7 +153,7 @@ const Container = styled.div`
 
   .title {
     font-weight: bold;
-    color: ${color.black};
+    color: ${color.pointBlue};
   }
 
   @media (max-width: 479px) {
@@ -161,7 +161,6 @@ const Container = styled.div`
     gap: 30px;
     .title {
       font-size: 24px;
-      color: ${color.pointBlue};
     }
     .info-wrap {
       display: flex;
@@ -178,7 +177,31 @@ const Container = styled.div`
       margin-bottom: 10px;
     }
   }
-  @media (min-width: 480px) and (max-width: 600px) {
+
+  @media (min-width: 480px) and (max-width: 529px) {
+    height: 650px;
+    gap: 40px;
+    .title {
+      font-size: 28px;
+    }
+
+    .info-wrap {
+      display: flex;
+      gap: 80px;
+    }
+
+    h3.animate {
+      width: 270px;
+      animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 530px) and (max-width: 600px) {
     height: 600px;
     gap: 40px;
     .title {
@@ -283,7 +306,23 @@ const SubIntroWrap = styled.div`
       font-size: 10px;
     }
   }
-  @media (min-width: 480px) and (max-width: 600px) {
+  @media (min-width: 480px) and (max-width: 529px) {
+    .content-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .content-title {
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .content {
+      font-size: 10px;
+    }
+  }
+
+  @media (min-width: 530px) and (max-width: 600px) {
     .content-wrap {
       display: flex;
       flex-direction: column;
@@ -347,7 +386,17 @@ const Grid = styled.div`
       height: 224px;
     }
   }
-  @media (min-width: 480px) and (max-width: 600px) {
+
+  @media (min-width: 480px) and (max-width: 529px) {
+    flex-direction: column;
+    gap: 30px;
+    .id-photo {
+      width: 200px;
+      height: 224px;
+    }
+  }
+
+  @media (min-width: 530px) and (max-width: 600px) {
     gap: 20px;
     .id-photo {
       width: 200px;
