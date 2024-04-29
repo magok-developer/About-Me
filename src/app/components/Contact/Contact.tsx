@@ -71,8 +71,8 @@ const Contact = ({ element }: Props) => {
             <Link href={item.url} target='_blank' key={index}>
               <Image
                 src={clickedIndex === index ? item.activeIcon : item.icon}
-                width={48}
-                height={48}
+                width={40}
+                height={40}
                 alt='icon'
                 onClick={() => handleClickCopy(index, item.copy)}
                 onMouseEnter={() => setClickedIndex(index)}
@@ -85,8 +85,8 @@ const Contact = ({ element }: Props) => {
             <Image
               key={index}
               src={clickedIndex === index ? item.activeIcon : item.icon}
-              width={48}
-              height={48}
+              width={40}
+              height={40}
               alt='icon'
               onClick={() => handleClickCopy(index, item.copy)}
               onMouseEnter={() => setClickedIndex(index)}
@@ -117,10 +117,10 @@ const Container = styled.div`
   margin-top: 100px;
 
   .title {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
 
-    color: ${color.black};
+    color: ${color.pointBlue};
   }
 `;
 
