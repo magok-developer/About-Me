@@ -256,18 +256,32 @@ const Project = ({ element }: Props) => {
             <div className='stack'>Emotion</div>
             <div className='stack'>Zustand</div>
           </div>
-          <Link
-            href='https://github.com/magok-developer/Todo-project'
-            target='_blank'
-            style={{ width: "24px" }}
-          >
-            <Image
-              src='/images/contact/gitHub_active.svg'
-              width={24}
-              height={24}
-              alt='git'
-            />
-          </Link>
+          <div style={{ display: "flex", gap: 20 }}>
+            <Link
+              href='https://github.com/magok-developer/Todo-project'
+              target='_blank'
+              style={{ width: "24px" }}
+            >
+              <Image
+                src='/images/contact/gitHub_active.svg'
+                width={24}
+                height={24}
+                alt='git'
+              />
+            </Link>
+            <Link
+              href='https://todo-project-puce.vercel.app/'
+              target='_blank'
+              style={{ width: "24px" }}
+            >
+              <Image
+                src='/images/icons/link.svg'
+                width={24}
+                height={24}
+                alt='git'
+              />
+            </Link>
+          </div>
         </Wrap>
       </Grid>
 
@@ -293,18 +307,32 @@ const Project = ({ element }: Props) => {
             <div className='stack'>React-Query</div>
             <div className='stack'>Emotion</div>
           </div>
-          <Link
-            href='https://github.com/magok-developer/myHome-project'
-            target='_blank'
-            style={{ width: "24px" }}
-          >
-            <Image
-              src='/images/contact/gitHub_active.svg'
-              width={24}
-              height={24}
-              alt='git'
-            />
-          </Link>
+          <div style={{ display: "flex", gap: 20 }}>
+            <Link
+              href='https://github.com/magok-developer/myHome-project'
+              target='_blank'
+              style={{ width: "24px" }}
+            >
+              <Image
+                src='/images/contact/gitHub_active.svg'
+                width={24}
+                height={24}
+                alt='git'
+              />
+            </Link>
+            <Link
+              href='https://my-home-project.vercel.app/'
+              target='_blank'
+              style={{ width: "24px" }}
+            >
+              <Image
+                src='/images/icons/link.svg'
+                width={24}
+                height={24}
+                alt='git'
+              />
+            </Link>
+          </div>
         </Wrap>
       </Grid>
 
@@ -331,10 +359,11 @@ const Container = styled.div`
 
   .main-title {
     font-weight: bold;
-    color: ${color.pointBlue};
+    border-bottom: 4px solid ${color.pointBlue};
+    padding-bottom: 10px;
   }
 
-  @media (max-width: 479px) {
+  @media (max-width: 480px) {
     height: 2600px;
     gap: 60px;
     .main-title {
