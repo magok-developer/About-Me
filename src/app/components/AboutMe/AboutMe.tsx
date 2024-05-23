@@ -16,117 +16,157 @@ const AboutMe = ({ element }: Props) => {
       <div className='title'>About Me</div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
-        <div className='info-wrap'>
-          <SubIntroWrap>
-            <Image
-              src='/images/icons/user.svg'
-              width={20}
-              height={20}
-              alt='user'
-            />
-            <div className='content-wrap'>
-              <div className='content-title'>이름</div>
+        <Wrap>
+          <img src='/images/photo.jpg' alt='증명사진' className='id-photo' />
+          <Content>
+            프로그래밍에 대한 새로운 기술을 배우고{" "}
+            <span className={isInViewport ? "highlight" : ""} ref={ref}>
+              문제 해결
+            </span>
+            에 흥미를 느끼며,
+            <br />
+            <span className={isInViewport ? "highlight" : ""} ref={ref}>
+              협업과 커뮤니케이션
+            </span>
+            을 통해 팀원들과 함께 일하는 것을 좋아합니다.
+            <br />
+            <br />
+            빠르게 변화하는 기술 트렌드에 대한{" "}
+            <span className={isInViewport ? "highlight" : ""} ref={ref}>
+              호기심
+            </span>
+            을 가지고 있으며,
+            <br />
+            <span className={isInViewport ? "highlight" : ""} ref={ref}>
+              사용자 중심
+            </span>
+            의 솔루션을 개발하는 것에 관심이 많습니다.
+          </Content>
+        </Wrap>
+
+        <Grid>
+          <div className='info-wrap'>
+            <SubIntroWrap>
+              <Image
+                src='/images/icons/user.svg'
+                width={20}
+                height={20}
+                alt='user'
+              />
               <div className='content'>하지원</div>
-            </div>
-          </SubIntroWrap>
+            </SubIntroWrap>
 
-          <SubIntroWrap>
-            <Image
-              src='/images/icons/calendar.svg'
-              width={20}
-              height={20}
-              alt='calendar'
-            />
-            <div className='content-wrap'>
-              <div className='content-title'>생년월일</div>
+            <SubIntroWrap>
+              <Image
+                src='/images/icons/calendar.svg'
+                width={20}
+                height={20}
+                alt='calendar'
+              />
               <div className='content'>1998.12.03</div>
-            </div>
-          </SubIntroWrap>
+            </SubIntroWrap>
 
-          <SubIntroWrap>
-            <Image
-              src='/images/icons/house.svg'
-              width={20}
-              height={20}
-              alt='house'
-            />
-            <div className='content-wrap'>
-              <div className='content-title'>주소지</div>
+            <SubIntroWrap>
+              <Image
+                src='/images/icons/house.svg'
+                width={20}
+                height={20}
+                alt='house'
+              />
               <div className='content'>서울시 강서구</div>
-            </div>
-          </SubIntroWrap>
-        </div>
-        <div
-          style={{ display: "flex", justifyContent: "center" }}
-          className='info-wrap'
-        >
-          <SubIntroWrap>
-            <Image
-              src='/images/icons/camp.svg'
-              width={20}
-              height={20}
-              alt='house'
-            />
-            <div className='content-wrap'>
-              <div className='content-title'>부트캠프</div>
+            </SubIntroWrap>
+
+            <SubIntroWrap>
+              <Image
+                src='/images/icons/camp.svg'
+                width={20}
+                height={20}
+                alt='house'
+              />
               <div className='content'>
                 엘리스 코딩 SW 엔지니어 트랙 6기 수료
               </div>
-            </div>
-          </SubIntroWrap>
+            </SubIntroWrap>
 
-          <SubIntroWrap>
-            <Image
-              src='/images/contact/notion.png'
-              width={18}
-              height={18}
-              alt='notion'
-            />
-            <div className='content-wrap'>
-              <div className='content-title'>이력서</div>
+            <SubIntroWrap>
+              <Image
+                src='/images/contact/notion.png'
+                width={18}
+                height={18}
+                alt='notion'
+              />
               <a
                 href='https://giddy-product-b00.notion.site/1248f4226cca4b8aaf0d694951985aad'
                 target='_blank'
               >
-                <div className='content'>노션 이력서 바로가기 </div>
+                <div className='content'>노션 이력서 보러가기 </div>
               </a>
+            </SubIntroWrap>
+          </div>
+          <div className='skills'>
+            <div className='skills-title'>Skills</div>
+            <div style={{ display: "flex", gap: "30px" }}>
+              <div className='front'>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "10px",
+                    alignItems: "center",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <Image
+                    src={"/images/icons/check.svg"}
+                    alt='check'
+                    width={30}
+                    height={30}
+                  />
+                  <div>Front-end</div>
+                </div>
+                <div className='skill-wrap'>
+                  <div className='skill'>HTML</div>
+                  <div className='skill'>CSS</div>
+                  <div className='skill'>JavaScript</div>
+                  <div className='skill'>TypeScript</div>
+                  <div className='skill'>React</div>
+                  <div className='skill'>Next.js</div>
+                  <div className='skill'>React-Query</div>
+                  <div className='skill'>Zustand</div>
+                  <div className='skill'>Styled-Components</div>
+                  <div className='skill'>emotion</div>
+                </div>
+              </div>
+
+              <div className='etc'>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "10px",
+                    alignItems: "center",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <Image
+                    src={"/images/icons/check.svg"}
+                    alt='check'
+                    width={30}
+                    height={30}
+                  />
+                  <div>etc</div>
+                </div>
+                <div className='skill-wrap'>
+                  <div className='skill'>Git</div>
+                  <div className='skill'>Postman</div>
+                  <div className='skill'>Swagger</div>
+                  <div className='skill'>Figma</div>
+                  <div className='skill'>PhotoShop</div>
+                  <div className='skill'>Illustrator</div>
+                </div>
+              </div>
             </div>
-          </SubIntroWrap>
-        </div>
+          </div>
+        </Grid>
       </div>
-
-      <Grid>
-        <img src='/images/photo.jpg' alt='증명사진' className='id-photo' />
-
-        <Content>
-          <h3 className={isInViewport ? "animate" : ""} ref={ref}>
-            안녕하세요. 주니어 프론트엔드 개발자 하지원 입니다.
-          </h3>
-          <br />
-          프로그래밍에 대한 새로운 기술을 배우고{" "}
-          <span className={isInViewport ? "highlight" : ""} ref={ref}>
-            문제 해결
-          </span>
-          에 흥미를 느끼며,
-          <br />
-          <span className={isInViewport ? "highlight" : ""} ref={ref}>
-            협업과 커뮤니케이션
-          </span>
-          을 통해 팀원들과 함께 일하는 것을 좋아합니다.
-          <br />
-          <br />
-          빠르게 변화하는 기술 트렌드에 대한{" "}
-          <span className={isInViewport ? "highlight" : ""} ref={ref}>
-            호기심
-          </span>
-          을 가지고 있으며,
-          <br />
-          <span className={isInViewport ? "highlight" : ""} ref={ref}>
-            사용자 중심
-          </span>
-          의 솔루션을 개발하는 것에 관심이 많습니다.
-        </Content>
-      </Grid>
     </Container>
   );
 };
@@ -149,122 +189,69 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 80px;
 
   .title {
     font-weight: bold;
-    color: ${color.pointBlue};
+    border-bottom: 4px solid ${color.pointBlue};
+    padding-bottom: 10px;
+  }
+
+  .info-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
   }
 
   @media (max-width: 479px) {
-    height: 650px;
+    height: 1100px;
     gap: 30px;
     .title {
       font-size: 24px;
     }
-    .info-wrap {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-    }
-    h3.animate {
-      width: 250px;
-      animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid;
-      font-size: 10px;
-      margin-bottom: 10px;
-    }
   }
 
-  @media (min-width: 480px) and (max-width: 529px) {
-    height: 650px;
+  @media (min-width: 479px) and (max-width: 530px) {
+    height: 1100px;
     gap: 40px;
     .title {
       font-size: 28px;
-    }
-
-    .info-wrap {
-      display: flex;
-      gap: 80px;
-    }
-
-    h3.animate {
-      width: 270px;
-      animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid;
-      font-size: 12px;
-      margin-bottom: 10px;
     }
   }
 
   @media (min-width: 530px) and (max-width: 600px) {
-    height: 600px;
-    gap: 40px;
+    height: 1100px;
+    gap: 30px;
     .title {
       font-size: 28px;
-    }
-
-    .info-wrap {
-      display: flex;
-      gap: 80px;
-    }
-
-    h3.animate {
-      width: 270px;
-      animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid;
-      font-size: 12px;
-      margin-bottom: 10px;
     }
   }
 
   @media (min-width: 601px) and (max-width: 750px) {
-    height: 700px;
+    height: 850px;
+
     gap: 60px;
     .title {
       font-size: 30px;
     }
-    .info-wrap {
-      display: flex;
-      gap: 100px;
-    }
+  }
 
-    h3.animate {
-      width: 310px;
-      animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid;
-      font-size: 14px;
-      margin-bottom: 10px;
+  @media (min-width: 750px) and (max-width: 1001px) {
+    height: 800px;
+
+    gap: 60px;
+    .title {
+      font-size: 30px;
     }
   }
 
-  @media (min-width: 751px) {
-    height: 800px;
-    gap: 80px;
-    .title {
-      font-size: 32px;
-    }
+  @media (min-width: 1001px) {
+    height: 850px;
 
-    .info-wrap {
-      display: flex;
-      gap: 160px;
-    }
-    h3.animate {
-      width: 355px;
-      animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid;
-      font-size: 16px;
-      margin-bottom: 10px;
+    gap: 40px;
+    .title {
+      font-size: 30px;
     }
   }
 
@@ -280,10 +267,75 @@ const Container = styled.div`
     }
   }
 `;
+const Wrap = styled.div`
+  display: flex;
+  align-items: center;
+
+  .id-photo {
+    border-radius: 100%;
+    border: 3px solid ${color.pointBlue};
+  }
+
+  @media (max-width: 479px) {
+    flex-direction: column;
+    gap: 20px;
+    .id-photo {
+      width: 180px;
+      height: 202px;
+    }
+  }
+
+  @media (min-width: 479px) and (max-width: 530px) {
+    flex-direction: column;
+    gap: 20px;
+    .id-photo {
+      width: 180px;
+      height: 202px;
+    }
+  }
+
+  @media (min-width: 530px) and (max-width: 600px) {
+    flex-direction: column;
+    gap: 20px;
+    .id-photo {
+      width: 200px;
+      height: 224px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 750px) {
+    gap: 60px;
+    .id-photo {
+      width: 200px;
+      height: 224px;
+    }
+  }
+
+  @media (min-width: 750px) and (max-width: 1001px) {
+    gap: 80px;
+    .id-photo {
+      width: 220px;
+      height: 246px;
+    }
+  }
+
+  @media (min-width: 1001px) {
+    gap: 100px;
+    .id-photo {
+      width: 240px;
+      height: 269px;
+    }
+  }
+`;
 
 const SubIntroWrap = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
+  .content {
+    font-weight: bold;
+  }
 
   a .content {
     &:hover {
@@ -292,79 +344,36 @@ const SubIntroWrap = styled.div`
   }
 
   @media (max-width: 479px) {
-    .content-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .content-title {
-      font-size: 12px;
-      font-weight: bold;
-    }
     .content {
       font-size: 10px;
     }
   }
-  @media (min-width: 480px) and (max-width: 529px) {
-    .content-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
 
-    .content-title {
-      font-size: 12px;
-      font-weight: bold;
-    }
+  @media (min-width: 479px) and (max-width: 530px) {
     .content {
       font-size: 10px;
     }
   }
 
   @media (min-width: 530px) and (max-width: 600px) {
-    .content-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .content-title {
-      font-size: 14px;
-      font-weight: bold;
-    }
     .content {
       font-size: 12px;
     }
   }
 
   @media (min-width: 601px) and (max-width: 750px) {
-    .content-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .content-title {
-      font-size: 16px;
-      font-weight: bold;
-    }
     .content {
       font-size: 12px;
     }
   }
 
-  @media (min-width: 751px) {
-    .content-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+  @media (min-width: 750px) and (max-width: 1001px) {
+    .content {
+      font-size: 12px;
     }
+  }
 
-    .content-title {
-      font-size: 20px;
-      font-weight: bold;
-    }
+  @media (min-width: 1001px) {
     .content {
       font-size: 14px;
     }
@@ -376,47 +385,96 @@ const Grid = styled.div`
   align-items: center;
   justify-content: flex-start;
 
-  gap: 80px;
-
-  @media (max-width: 479px) {
+  .skills-title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .skills {
+    display: flex;
     flex-direction: column;
-    gap: 30px;
-    .id-photo {
-      width: 200px;
-      height: 224px;
+    gap: 20px;
+  }
+  .front,
+  .etc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .skill-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 12px;
+    background-color: ${color.white};
+    border-radius: 4px;
+    &:hover {
+      background-color: ${color.pointYellow};
     }
   }
 
-  @media (min-width: 480px) and (max-width: 529px) {
+  @media (max-width: 479px) {
+    display: flex;
     flex-direction: column;
-    gap: 30px;
-    .id-photo {
+    gap: 40px;
+    .front,
+    .etc {
       width: 200px;
-      height: 224px;
+    }
+    .skill {
+      font-size: 10px;
+    }
+  }
+
+  @media (min-width: 479px) and (max-width: 530px) {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .front,
+    .etc {
+      width: 200px;
+    }
+    .skill {
+      font-size: 10px;
     }
   }
 
   @media (min-width: 530px) and (max-width: 600px) {
-    gap: 20px;
-    .id-photo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .front,
+    .etc {
       width: 200px;
-      height: 224px;
     }
   }
 
   @media (min-width: 601px) and (max-width: 750px) {
-    gap: 20px;
-    .id-photo {
-      width: 240px;
-      height: 269px;
+    gap: 40px;
+    .front,
+    .etc {
+      width: 180px;
     }
   }
 
-  @media (min-width: 751px) {
+  @media (min-width: 750px) and (max-width: 1001px) {
     gap: 80px;
-    .id-photo {
+    .front,
+    .etc {
+      width: 230px;
+    }
+  }
+
+  @media (min-width: 1001px) {
+    gap: 80px;
+    .front,
+    .etc {
       width: 300px;
-      height: 336px;
     }
   }
 `;
@@ -427,16 +485,20 @@ const Content = styled.div`
   @media (max-width: 479px) {
     font-size: 11px;
   }
-  @media (min-width: 480px) and (max-width: 600px) {
-    font-size: 11px;
+  @media (min-width: 479px) and (max-width: 600px) {
+    font-size: 12px;
   }
 
   @media (min-width: 601px) and (max-width: 750px) {
     font-size: 12px;
   }
 
-  @media (min-width: 751px) {
+  @media (min-width: 750px) and (max-width: 1001px) {
     font-size: 14px;
+  }
+
+  @media (min-width: 1001px) {
+    font-size: 16px;
   }
 
   .highlight {
