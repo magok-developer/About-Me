@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import { color } from "@/app/styles/color";
 import { Titan_One } from "next/font/google";
+import { useScrollAnimation } from "@/app/hook/useScrollAnimation";
+import Image from "next/image";
 
 type Props = {
   element: () => void;
@@ -9,24 +11,23 @@ type Props = {
 const titan = Titan_One({ subsets: ["latin"], weight: ["400"] });
 
 const Home = ({ element }: Props) => {
+  const { ref, isInViewport } = useScrollAnimation(element);
   return (
     <Container ref={element}>
-      <Text className={titan.className}>
-        <span>J</span>
-        <span>i</span>
-        <span>w</span>
-        <span>o</span>
-        <span>n</span>
-        <span>P</span>
-        <span>o</span>
-        <span>r</span>
-        <span>t</span>
-        <span>f</span>
-        <span>o</span>
-        <span>l</span>
-        <span>i</span>
-        <span>o</span>
-      </Text>
+      <h1 className='hello'> 반갑습니다! </h1>
+      <h1 className={isInViewport ? "animate" : ""} ref={ref}>
+        주니어 프론트엔드 개발자 하지원 입니다.
+      </h1>
+      <h4>
+        사용자 중심의 개발을 지향하며, 협업과 커뮤니케이션을 중요시 합니다.
+      </h4>
+      <Image
+        src={"/images/icons/arrow-down.svg"}
+        alt='arrow'
+        width={30}
+        height={30}
+        className='arrow'
+      />
     </Container>
   );
 };
@@ -41,109 +42,89 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  font-size: 100px;
   font-weight: bold;
 
-  background-color: ${color.pointBlue};
+  background: url("images/background.png");
 
-  @media (max-width: 479px) {
-    height: 500px;
+  color: ${color.white};
+  h1.hello {
+    margin-bottom: 14px;
+  }
+
+  h1.animate {
+    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    margin-bottom: 20px;
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: 30px;
+    animation: bounce 0.5s cubic-bezier(0, 0, 0.18, 0.99) infinite alternate;
+  }
+  @media (max-width: 480px) {
+    height: 540px;
+
+    h1.hello {
+      font-size: 20px;
+    }
+
+    h1.animate {
+      width: 340px;
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 12px;
+    }
   }
   @media (min-width: 480px) and (max-width: 600px) {
-    height: 550px;
+    height: 560px;
+
+    h1.hello {
+      font-size: 24px;
+    }
+
+    h1.animate {
+      width: 410px;
+      font-size: 24px;
+    }
+    h4 {
+      font-size: 14px;
+    }
   }
 
   @media (min-width: 601px) and (max-width: 750px) {
     height: 600px;
-  }
 
-  @media (min-width: 751px) {
-    height: 650px;
-  }
-`;
-
-const Text = styled.h1`
-  display: flex;
-  span {
-    position: relative;
-    top: 20px;
-    display: inline-block;
-    animation: bounce 0.3s ease infinite alternate;
-    color: ${color.white};
-    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
-      0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent,
-      0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
-  }
-
-  span:nth-child(2) {
-    animation-delay: 0.1s;
-  }
-  span:nth-child(3) {
-    animation-delay: 0.2s;
-  }
-  span:nth-child(4) {
-    animation-delay: 0.3s;
-  }
-  span:nth-child(5) {
-    animation-delay: 0.4s;
-  }
-  span:nth-child(6) {
-    animation-delay: 0.5s;
-  }
-  span:nth-child(7) {
-    animation-delay: 0.6s;
-  }
-  span:nth-child(8) {
-    animation-delay: 0.7s;
-  }
-  span:nth-child(9) {
-    animation-delay: 0.8s;
-  }
-  span:nth-child(10) {
-    animation-delay: 0.9s;
-  }
-  span:nth-child(11) {
-    animation-delay: 1s;
-  }
-  span:nth-child(12) {
-    animation-delay: 1.1s;
-  }
-  span:nth-child(13) {
-    animation-delay: 1.2s;
-  }
-  span:nth-child(14) {
-    animation-delay: 1.3s;
-  }
-
-  @media (max-width: 479px) {
-    span {
-      font-size: 40px;
+    h1.hello {
+      font-size: 30px;
     }
-  }
-  @media (min-width: 480px) and (max-width: 600px) {
-    span {
-      font-size: 40px;
+
+    h1.animate {
+      width: 510px;
+      font-size: 30px;
     }
   }
 
-  @media (min-width: 601px) and (max-width: 750px) {
-    span {
-      font-size: 60px;
+  @media (min-width: 750px) {
+    height: 690px;
+
+    h1.animate {
+      width: 540px;
     }
   }
 
-  @media (min-width: 751px) {
-    span {
-      font-size: 80px;
+  @keyframes typing {
+    from {
+      width: 0;
     }
   }
 
   @keyframes bounce {
-    100% {
-      top: -20px;
-      text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
-        0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
-        0 50px 25px rgba(0, 0, 0, 0.2);
+    to {
+      transform: translateY(-30px);
     }
   }
 `;
