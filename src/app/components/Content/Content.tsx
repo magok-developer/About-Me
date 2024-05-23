@@ -13,9 +13,8 @@ const Content = ({ router }: any) => {
     <ContentWrap>
       <Home element={router[0].observe} />
       <AboutMe element={router[1].observe} />
-      <Skills element={router[2].observe} />
-      <Project element={router[3].observe} />
-      <Contact element={router[4].observe} />
+      <Project element={router[2].observe} />
+      <Contact element={router[3].observe} />
     </ContentWrap>
   );
 };

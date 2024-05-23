@@ -23,13 +23,8 @@ const Page = () => {
     },
     {
       path: "third",
-      label: "<Skills />",
-      observe: useObserver("third", setIsFocused),
-    },
-    {
-      path: "fourth",
       label: "<Project />",
-      observe: useObserver("fourth", setIsFocused),
+      observe: useObserver("third", setIsFocused),
     },
     {
       path: "last",
