@@ -110,7 +110,7 @@ const ToggleContent = styled.div<{ isActive: boolean }>`
 `;
 
 const DesktopHeader = styled.div`
-  @media (max-width: 479px) {
+  @media (max-width: 480px) {
     display: none;
   }
   @media (min-width: 480px) and (max-width: 600px) {
@@ -165,7 +165,7 @@ const DesktopHeader = styled.div`
     }
   }
 
-  @media (min-width: 751px) {
+  @media (min-width: 750px) {
     margin-top: 20px;
     position: fixed;
     top: 0;
@@ -241,7 +241,7 @@ const Content = styled.div<{ isActive: boolean }>`
     }
   }
 
-  @media (min-width: 701px) {
+  @media (min-width: 750px) {
     color: ${(props) => (props.isActive ? color.white : color.pointBlue)};
     background-color: ${(props) =>
       props.isActive ? color.pointBlue : color.pointGray};
