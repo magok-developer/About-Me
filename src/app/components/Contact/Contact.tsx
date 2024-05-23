@@ -117,10 +117,10 @@ const Container = styled.div`
   margin-top: 100px;
 
   .title {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
-
-    color: ${color.pointBlue};
+    border-bottom: 4px solid ${color.pointBlue};
+    padding-bottom: 10px;
   }
 `;
 
