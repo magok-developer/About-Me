@@ -77,8 +77,6 @@ const Contact = ({ element }: Props) => {
                 onClick={() => handleClickCopy(index, item.copy)}
                 onMouseEnter={() => setClickedIndex(index)}
                 onMouseLeave={() => setClickedIndex(-1)}
-                style={{ cursor: "pointer" }}
-                className='icon'
               />
             </Link>
           ) : (
@@ -91,15 +89,14 @@ const Contact = ({ element }: Props) => {
               onClick={() => handleClickCopy(index, item.copy)}
               onMouseEnter={() => setClickedIndex(index)}
               onMouseLeave={() => setClickedIndex(-1)}
-              style={{ cursor: "pointer" }}
               className='icon'
             />
           )
         )}
       </ImagesWrap>
-      <div style={{ marginTop: 200, fontSize: "12px", color: color.pointGray }}>
+      <span className='copyright'>
         Copyright 2024. Web Frontend Developer Jiwon Portfolio
-      </div>
+      </span>
       <Alert visible={alertVisible} onClose={() => setAlertVisible(false)} />
     </Container>
   );
@@ -122,9 +119,19 @@ const Container = styled.div`
     border-bottom: 4px solid ${color.pointBlue};
     padding-bottom: 10px;
   }
+
+  .copyright {
+    margin-top: 200px;
+    font-size: 12px;
+    color: ${color.pointGray};
+  }
 `;
 
 const ImagesWrap = styled.div`
   display: flex;
   gap: 60px;
+
+  .icon {
+    cursor: pointer;
+  }
 `;

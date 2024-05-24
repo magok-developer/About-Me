@@ -106,7 +106,7 @@ const Project = ({ element }: Props) => {
             <br />
             <br />
           </div>
-          <div style={{ display: "flex", gap: 12 }}>
+          <div className='stack-wrap'>
             <div className='stack'>HTML</div>
             <div className='stack'>CSS</div>
             <div className='stack'>JavaScript</div>
@@ -144,7 +144,7 @@ const Project = ({ element }: Props) => {
             <br />
             <br />
           </div>
-          <div style={{ display: "flex", gap: 12 }}>
+          <div className='stack-wrap'>
             <div className='stack'>React</div>
             <div className='stack'>JavaScript</div>
             <div className='stack'>Styled Component</div>
@@ -181,7 +181,7 @@ const Project = ({ element }: Props) => {
             포트폴리오를 위해 사이드팀을 구하는 사람들을 위한 사이트를
             제작하였습니다.
           </div>
-          <div style={{ display: "flex", gap: 12 }}>
+          <div className='stack-wrap'>
             <div className='stack'>Next.js</div>
             <div className='stack'>TypeScript</div>
             <div className='stack'>React-query</div>
@@ -213,7 +213,7 @@ const Project = ({ element }: Props) => {
             포트폴리오 정리를 위해 진행한 1인 프로젝트 입니다. <br />
             프로젝트는 약 1주간 진행 되었습니다.
           </div>
-          <div style={{ display: "flex", gap: 12 }}>
+          <div className='stack-wrap'>
             <div className='stack'>Next.js</div>
             <div className='stack'>TypeScript</div>
             <div className='stack'>Emotion</div>
@@ -250,13 +250,13 @@ const Project = ({ element }: Props) => {
             Todo List와 일기장을 결합한 1인 프로젝트입니다. <br />
             프로젝트는 약 1주간 진행 되었습니다.
           </div>
-          <div style={{ display: "flex", gap: 12 }}>
+          <div className='stack-wrap'>
             <div className='stack'>Next.js</div>
             <div className='stack'>TypeScript</div>
             <div className='stack'>Emotion</div>
             <div className='stack'>Zustand</div>
           </div>
-          <div style={{ display: "flex", gap: 20 }}>
+          <div className='link-wrap'>
             <Link
               href='https://github.com/magok-developer/Todo-project'
               target='_blank'
@@ -301,13 +301,13 @@ const Project = ({ element }: Props) => {
           <div className='content'>
             공공 API를 이용해서 진행된 1인 프로젝트입니다.
           </div>
-          <div style={{ display: "flex", gap: 12 }}>
+          <div className='stack-wrap'>
             <div className='stack'>Next.js</div>
             <div className='stack'>TypeScript</div>
             <div className='stack'>React-Query</div>
             <div className='stack'>Emotion</div>
           </div>
-          <div style={{ display: "flex", gap: 20 }}>
+          <div className='link-wrap'>
             <Link
               href='https://github.com/magok-developer/myHome-project'
               target='_blank'
@@ -503,6 +503,16 @@ const Wrap = styled.div`
   }
   .content {
     line-height: 150%;
+  }
+
+  .stack-wrap {
+    display: flex;
+    gap: 12px;
+  }
+
+  .link-wrap {
+    display: flex;
+    gap: 20px;
   }
 
   @media (max-width: 750px) {

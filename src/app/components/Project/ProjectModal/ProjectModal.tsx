@@ -42,6 +42,9 @@ const Container = styled.div<{ visible?: boolean }>`
 `;
 
 const Content = styled.div`
+  width: 95%;
+  height: 90%;
+  padding: 0;
   position: relative;
   padding: 10px 20px;
   .close {

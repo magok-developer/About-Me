@@ -62,51 +62,24 @@ const WhiteRabbitModal = ({ visible, onClose }: Props) => {
     },
   ];
   return (
-    <ProjectModal
-      style={{
-        width: "95%",
-        height: "90%",
-        zIndex: 9999,
-        overflow: "hidden",
-        padding: 0,
-      }}
-      visible={visible}
-      onClose={onClose}
-    >
+    <ProjectModal visible={visible} onClose={onClose}>
       <Container>
         <div className='project'>
           <Slick images={images} />
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-start",
-            flexDirection: "column",
-            gap: 20,
-            flex: 1,
-            marginLeft: 60,
-          }}
-        >
-          <div
-            style={{
-              fontSize: 20,
-              fontWeight: "bold",
-              color: "#5526CC",
-            }}
-          >
-            White Rabbit
-          </div>
+        <Wrap>
+          <h2 className='project-title'>White Rabbit</h2>
           <ContentWrap>
-            <div className='title'>진행 기간 |</div>
-            <div className='content'>2023.11.13 ~ 2023.12.01</div>
+            <p className='title'>진행 기간 |</p>
+            <span className='content'>2023.11.13 ~ 2023.12.01</span>
           </ContentWrap>
           <ContentWrap>
-            <div className='title'>포지션 |</div>
-            <div className='content'>프론트엔드</div>
+            <p className='title'>포지션 |</p>
+            <p className='content'>프론트엔드</p>
           </ContentWrap>
 
-          <div className='title'>Summary</div>
-          <div className='content'>
+          <p className='title'>Summary</p>
+          <span className='content'>
             레이서(부트캠프 수강생)들 간의 네트워크 형성을 위한 커뮤니티를 큰
             틀로 기획하고 이를 구체화했습니다.
             <br />
@@ -123,10 +96,10 @@ const WhiteRabbitModal = ({ visible, onClose }: Props) => {
             <br />
             스마트폰 사용 환경을 고려하여 UI를 모바일에 최적화하여
             제작하였습니다.
-          </div>
+          </span>
 
-          <div className='title'>Get</div>
-          <div className='content'>
+          <p className='title'>Get</p>
+          <span className='content'>
             로그인, 회원가입, 비밀번호 찾기, 마이페이지, 그리고 회원 개인의 활동
             조회와 회원정보 수정, 팔로우 관리 등 다방면을 담당했습니다. 특히
             로그인과 회원가입 과정에서의 유효성 검사 및 비밀번호 찾기 기능의
@@ -142,8 +115,8 @@ const WhiteRabbitModal = ({ visible, onClose }: Props) => {
             <br /> <br />
             마음이 잘 맞는 팀원들 덕분에 우수상이라는 값진 상을 받을 수 있게
             되었습니다.
-          </div>
-        </div>
+          </span>
+        </Wrap>
       </Container>
     </ProjectModal>
   );
@@ -172,6 +145,19 @@ const Container = styled.div`
     font-size: 12px;
     color: #727272;
     line-height: 150%;
+  }
+`;
+
+const Wrap = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  margin-left: 60px;
+
+  .project-title {
+    color: #5526cc;
   }
 `;
 

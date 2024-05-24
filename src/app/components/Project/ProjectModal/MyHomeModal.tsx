@@ -41,59 +41,32 @@ const MyHomeModal = ({ visible, onClose }: Props) => {
     },
   ];
   return (
-    <ProjectModal
-      style={{
-        width: "95%",
-        height: "90%",
-        zIndex: 9999,
-        overflow: "hidden",
-        padding: 0,
-      }}
-      visible={visible}
-      onClose={onClose}
-    >
+    <ProjectModal visible={visible} onClose={onClose}>
       <Container>
         <div className='project'>
           <Slick images={images} />
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-start",
-            flexDirection: "column",
-            gap: 24,
-            flex: 1,
-            marginLeft: 60,
-          }}
-        >
-          <div
-            style={{
-              fontSize: 24,
-              fontWeight: "bold",
-              color: "#2BAE66",
-            }}
-          >
-            My Home
-          </div>
+        <Wrap>
+          <h2 className='project-title'>My Home</h2>
           <ContentWrap>
-            <div className='title'>진행 기간 |</div>
-            <div className='content'>2024.4 ~ 진행 중</div>
+            <p className='title'>진행 기간 |</p>
+            <span className='content'>2024.4 ~ 진행 중</span>
           </ContentWrap>
           <ContentWrap>
-            <div className='title'>포지션 |</div>
-            <div className='content'>디자인, 프론트엔드</div>
+            <p className='title'>포지션 |</p>
+            <span className='content'>디자인, 프론트엔드</span>
           </ContentWrap>
 
-          <div className='title'>Summary</div>
-          <div className='content'>
+          <p className='title'>Summary</p>
+          <span className='content'>
             공공 데이터 포털의 청약 홈 API를 활용한 프로젝트를 진행했습니다.
             <br />
             <br />
             사용자는 지역, 주택 구분 등의 필터링을 통해 청약 건물 리스트를
             확인할 수 있습니다.
-          </div>
-          <div className='title'>Get</div>
-          <div className='content'>
+          </span>
+          <p className='title'>Get</p>
+          <span className='content'>
             프로젝트를 시작할 때 API Key를 발급 받는 과정부터 CORS 에러를
             해결하는 데 어려움을 겪었지만 직접 해결하면서 많은 것을 배웠습니다.
             <br />
@@ -111,8 +84,8 @@ const MyHomeModal = ({ visible, onClose }: Props) => {
             <br />
             현재는 각 API를 주택 구분 코드로 소팅하여 경쟁률 데이터를 가져올 수
             있도록 개발 중에 있습니다.
-          </div>
-        </div>
+          </span>
+        </Wrap>
       </Container>
     </ProjectModal>
   );
@@ -142,6 +115,19 @@ const Container = styled.div`
     line-height: 150%;
 
     word-break: keep-all;
+  }
+`;
+
+const Wrap = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  margin-left: 60px;
+
+  .project-title {
+    color: #2bae66;
   }
 `;
 

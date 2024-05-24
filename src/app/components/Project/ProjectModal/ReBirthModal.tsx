@@ -35,61 +35,33 @@ const ReBirthModal = ({ visible, onClose }: Props) => {
   ];
 
   return (
-    <ProjectModal
-      style={{
-        width: "95%",
-        height: "90%",
-        zIndex: 9999,
-        overflow: "hidden",
-        padding: 0,
-      }}
-      visible={visible}
-      onClose={onClose}
-    >
+    <ProjectModal visible={visible} onClose={onClose}>
       <Container>
         <div className='project'>
           <Slick images={images} />
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "flex-start",
-            flexDirection: "column",
-            gap: 24,
-            flex: 1,
-            marginLeft: 60,
-          }}
-        >
-          <div
-            style={{
-              fontSize: 24,
-              fontWeight: "bold",
-              background: color.black,
-              color: color.white,
-            }}
-          >
-            Re:Birth
-          </div>
+        <Wrap>
+          <h2 className='project-title'>Re:Birth</h2>
           <ContentWrap>
-            <div className='title'>진행 기간 |</div>
-            <div className='content'>2023.10.2 ~ 2023.10.13</div>
+            <p className='title'>진행 기간 |</p>
+            <span className='content'>2023.10.2 ~ 2023.10.13</span>
           </ContentWrap>
           <ContentWrap>
-            <div className='title'>포지션 |</div>
-            <div className='content'>프론트엔드</div>
+            <p className='title'>포지션 |</p>
+            <p className='content'>프론트엔드</p>
           </ContentWrap>
 
-          <div className='title'>Summary</div>
-          <div className='content'>
+          <p className='title'>Summary</p>
+          <span className='content'>
             개발 공부를 본격적으로 시작한 뒤 진행 된 첫 팀 프로젝트 였습니다.
             <br />
             모든 팀이 쇼핑몰이라는 공통 주제를 가지고 진행 하였으며, 제가 속했던
             2팀에서는 업사이클링 제품을 판매하는 쇼핑몰을 제작하였습니다.
             <br />
-          </div>
+          </span>
 
-          <div className='title'>Get</div>
-          <div className='content'>
+          <p className='title'>Get</p>
+          <span className='content'>
             부트캠프에서 제시한 필수 구현 기능 중 저는 장바구니와 비회원, 회원
             주문 조회를 담당했습니다.
             <br />
@@ -111,8 +83,8 @@ const ReBirthModal = ({ visible, onClose }: Props) => {
             <br />
             많이 부족하던 저를 잘 이끌어주던 팀원들 덕분에 대상이라는 값진 상을
             받을 수 있게 되었습니다.
-          </div>
-        </div>
+          </span>
+        </Wrap>
       </Container>
     </ProjectModal>
   );
@@ -142,6 +114,21 @@ const Container = styled.div`
     line-height: 150%;
 
     word-break: keep-all;
+  }
+`;
+
+const Wrap = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  margin-left: 60px;
+
+  .project-title {
+    font-weight: bold;
+    background-color: ${color.black};
+    color: ${color.white};
   }
 `;
 
