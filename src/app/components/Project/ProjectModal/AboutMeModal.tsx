@@ -36,24 +36,24 @@ const AboutMe = ({ visible, onClose }: Props) => {
         <Wrap>
           <h2 className='project-title'>About Me</h2>
           <ContentWrap>
-            <p className='title'>진행 기간 |</p>
-            <span className='content'>2024.03.25 ~ 2024.03.31</span>
+            <span className='title'>진행 기간 |</span>
+            <p className='content'>2024.03.25 ~ 2024.03.31</p>
           </ContentWrap>
           <ContentWrap>
-            <p className='title'>포지션 |</p>
-            <span className='content'>디자인, 프론트엔드</span>
+            <span className='title'>포지션 |</span>
+            <p className='content'>디자인, 프론트엔드</p>
           </ContentWrap>
 
-          <p className='title'>Summary</p>
-          <span className='content'>
+          <span className='title'>Summary</span>
+          <p className='content'>
             개인 포트폴리오 사이트입니다. <br />
             <br />
             Home, About Me, Skills, Project, Contact 구성으로 이루어져 있으며,
             디자인도 직접 구상하여 개발했습니다.
-          </span>
+          </p>
 
-          <p className='title'>Get</p>
-          <span className='content'>
+          <span className='title'>Get</span>
+          <p className='content'>
             스크롤을 감지하기 위해 ScrollIntoView와 Intersection Observer를
             활용하여 웹사이트에 동적인 요소를 추가했습니다.
             <br />
@@ -66,7 +66,7 @@ const AboutMe = ({ visible, onClose }: Props) => {
             <br />
             vercel을 통해 배포하는 것은 처음이었지만, 간편하고 신속한 배포
             과정을 경험할 수 있었습니다.
-          </span>
+          </p>
         </Wrap>
       </Container>
     </ProjectModal>

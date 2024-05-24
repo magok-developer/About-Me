@@ -25,16 +25,16 @@ const SideGoModal = ({ visible, onClose }: Props) => {
         <Wrap>
           <h2 className='project-title'>Side Go</h2>
           <ContentWrap>
-            <p className='title'>진행 기간 |</p>
-            <span className='content'>2024.2 ~ 진행 중</span>
+            <span className='title'>진행 기간 |</span>
+            <p className='content'>2024.2 ~ 진행 중</p>
           </ContentWrap>
           <ContentWrap>
-            <p className='title'>포지션 |</p>
-            <span className='content'>프론트엔드</span>
+            <span className='title'>포지션 |</span>
+            <p className='content'>프론트엔드</p>
           </ContentWrap>
 
-          <p className='title'>Summary</p>
-          <span className='content'>
+          <span className='title'>Summary</span>
+          <p className='content'>
             각 포지션, 기술 스택에 맞춰서 취준생 및 포트폴리오를 위해 공부하는
             개발자들이 사이드 프로젝트를 참여하고 수월하게 진행하게 도와줄 수
             있는 플랫폼이 필요하다는 생각에 진행하게된 프로젝트 입니다.
@@ -48,10 +48,10 @@ const SideGoModal = ({ visible, onClose }: Props) => {
             <br />
             이탈하지 않고 끝까지 남은 유저들은 보증금을 돌려받고 포트폴리오
             결과물을 얻게 됩니다.
-          </span>
+          </p>
 
-          <p className='title'>Get</p>
-          <span className='content'>
+          <span className='title'>Get</span>
+          <p className='content'>
             부트캠프에서 진행한 프로젝트는 개발자들끼리 기획과 디자인을 모두
             담당했었습니다. 그러나 현업에서 일하고 있는 기획자와 디자이너와 함께
             프로젝트를 진행하면서 많은 것을 배울 수 있는 좋은 기회였습니다.
@@ -70,7 +70,7 @@ const SideGoModal = ({ visible, onClose }: Props) => {
             <br />
             현재는 서비스를 실제로 배포하여 운영할 예정이며, 어드민 페이지를
             개발 중에 있습니다.
-          </span>
+          </p>
         </Wrap>
       </Container>
     </ProjectModal>

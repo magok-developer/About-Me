@@ -13,7 +13,7 @@ const AboutMe = ({ element }: Props) => {
 
   return (
     <Container ref={element}>
-      <div className='title'>About Me</div>
+      <span className='title'>About Me</span>
 
       <div className='intro-wrap'>
         <Wrap>
@@ -53,7 +53,7 @@ const AboutMe = ({ element }: Props) => {
                 height={20}
                 alt='user'
               />
-              <div className='content'>하지원</div>
+              <span className='content'>하지원</span>
             </SubIntroWrap>
 
             <SubIntroWrap>
@@ -63,7 +63,7 @@ const AboutMe = ({ element }: Props) => {
                 height={20}
                 alt='calendar'
               />
-              <div className='content'>1998.12.03</div>
+              <span className='content'>1998.12.03</span>
             </SubIntroWrap>
 
             <SubIntroWrap>
@@ -73,7 +73,7 @@ const AboutMe = ({ element }: Props) => {
                 height={20}
                 alt='house'
               />
-              <div className='content'>서울시 강서구</div>
+              <span className='content'>서울시 강서구</span>
             </SubIntroWrap>
 
             <SubIntroWrap>
@@ -83,9 +83,9 @@ const AboutMe = ({ element }: Props) => {
                 height={20}
                 alt='house'
               />
-              <div className='content'>
+              <span className='content'>
                 엘리스 코딩 SW 엔지니어 트랙 6기 수료
-              </div>
+              </span>
             </SubIntroWrap>
 
             <SubIntroWrap>
@@ -99,12 +99,12 @@ const AboutMe = ({ element }: Props) => {
                 href='https://giddy-product-b00.notion.site/1248f4226cca4b8aaf0d694951985aad'
                 target='_blank'
               >
-                <div className='content'>노션 이력서 보러가기 </div>
+                <span className='content'>노션 이력서 보러가기 </span>
               </a>
             </SubIntroWrap>
           </div>
           <div className='skills'>
-            <div className='skills-title'>Skills</div>
+            <span className='skills-title'>Skills</span>
             <div className='skills-wrap'>
               <div className='front'>
                 <div className='skill'>
@@ -114,19 +114,19 @@ const AboutMe = ({ element }: Props) => {
                     width={30}
                     height={30}
                   />
-                  <div>Front-end</div>
+                  <span>Front-end</span>
                 </div>
                 <div className='skill-wrap'>
-                  <div className='skill-text'>HTML</div>
-                  <div className='skill-text'>CSS</div>
-                  <div className='skill-text'>JavaScript</div>
-                  <div className='skill-text'>TypeScript</div>
-                  <div className='skill-text'>React</div>
-                  <div className='skill-text'>Next.js</div>
-                  <div className='skill-text'>React-Query</div>
-                  <div className='skill-text'>Zustand</div>
-                  <div className='skill-text'>Styled-Components</div>
-                  <div className='skill-text'>emotion</div>
+                  <span className='skill-text'>HTML</span>
+                  <span className='skill-text'>CSS</span>
+                  <span className='skill-text'>JavaScript</span>
+                  <span className='skill-text'>TypeScript</span>
+                  <span className='skill-text'>React</span>
+                  <span className='skill-text'>Next.js</span>
+                  <span className='skill-text'>React-Query</span>
+                  <span className='skill-text'>Zustand</span>
+                  <span className='skill-text'>Styled-Components</span>
+                  <span className='skill-text'>emotion</span>
                 </div>
               </div>
 
@@ -138,15 +138,15 @@ const AboutMe = ({ element }: Props) => {
                     width={30}
                     height={30}
                   />
-                  <div>etc</div>
+                  <span>etc</span>
                 </div>
                 <div className='skill-wrap'>
-                  <div className='skill-text'>Git</div>
-                  <div className='skill-text'>Postman</div>
-                  <div className='skill-text'>Swagger</div>
-                  <div className='skill-text'>Figma</div>
-                  <div className='skill-text'>PhotoShop</div>
-                  <div className='skill-text'>Illustrator</div>
+                  <span className='skill-text'>Git</span>
+                  <span className='skill-text'>Postman</span>
+                  <span className='skill-text'>Swagger</span>
+                  <span className='skill-text'>Figma</span>
+                  <span className='skill-text'>PhotoShop</span>
+                  <span className='skill-text'>Illustrator</span>
                 </div>
               </div>
             </div>

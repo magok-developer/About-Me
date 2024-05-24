@@ -47,25 +47,25 @@ const TodoModal = ({ visible, onClose }: Props) => {
         <Wrap>
           <h2 className='project-title'>Todo & Diary</h2>
           <ContentWrap>
-            <p className='title'>진행 기간 |</p>
-            <span className='content'>2024.03.28 ~ 2024.03.31</span>
+            <span className='title'>진행 기간 |</span>
+            <p className='content'>2024.03.28 ~ 2024.03.31</p>
           </ContentWrap>
           <ContentWrap>
-            <p className='title'>포지션 |</p>
-            <span className='content'>디자인, 프론트엔드</span>
+            <span className='title'>포지션 |</span>
+            <p className='content'>디자인, 프론트엔드</p>
           </ContentWrap>
 
-          <p className='title'>Summary</p>
-          <span className='content'>
+          <span className='title'>Summary</span>
+          <p className='content'>
             CRUD를 가장 많이 연습 해볼 수 있는 프로젝트가 무엇일까 고민해보다가
             진행하게된 개인 프로젝트입니다.
             <br />
             Todo List와 일기를 결합하여 개발 했습니다.
             <br />
-          </span>
+          </p>
 
-          <p className='title'>Get</p>
-          <span className='content'>
+          <span className='title'>Get</span>
+          <p className='content'>
             CRUD, datePicker 라이브러리 사용 & 커스터마이징, zustand로 상태관리
             <br />
             <br />
@@ -77,7 +77,7 @@ const TodoModal = ({ visible, onClose }: Props) => {
             <br />
             <br />
             상단의 아이콘 클릭시 Todo와 일기 화면이 전환 되게끔 구현했습니다.
-          </span>
+          </p>
         </Wrap>
       </Container>
     </ProjectModal>

@@ -43,25 +43,25 @@ const ReBirthModal = ({ visible, onClose }: Props) => {
         <Wrap>
           <h2 className='project-title'>Re:Birth</h2>
           <ContentWrap>
-            <p className='title'>진행 기간 |</p>
-            <span className='content'>2023.10.2 ~ 2023.10.13</span>
+            <span className='title'>진행 기간 |</span>
+            <p className='content'>2023.10.2 ~ 2023.10.13</p>
           </ContentWrap>
           <ContentWrap>
-            <p className='title'>포지션 |</p>
+            <span className='title'>포지션 |</span>
             <p className='content'>프론트엔드</p>
           </ContentWrap>
 
-          <p className='title'>Summary</p>
-          <span className='content'>
+          <span className='title'>Summary</span>
+          <p className='content'>
             개발 공부를 본격적으로 시작한 뒤 진행 된 첫 팀 프로젝트 였습니다.
             <br />
             모든 팀이 쇼핑몰이라는 공통 주제를 가지고 진행 하였으며, 제가 속했던
             2팀에서는 업사이클링 제품을 판매하는 쇼핑몰을 제작하였습니다.
             <br />
-          </span>
+          </p>
 
-          <p className='title'>Get</p>
-          <span className='content'>
+          <span className='title'>Get</span>
+          <p className='content'>
             부트캠프에서 제시한 필수 구현 기능 중 저는 장바구니와 비회원, 회원
             주문 조회를 담당했습니다.
             <br />
@@ -83,7 +83,7 @@ const ReBirthModal = ({ visible, onClose }: Props) => {
             <br />
             많이 부족하던 저를 잘 이끌어주던 팀원들 덕분에 대상이라는 값진 상을
             받을 수 있게 되었습니다.
-          </span>
+          </p>
         </Wrap>
       </Container>
     </ProjectModal>
