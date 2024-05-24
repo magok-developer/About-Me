@@ -15,7 +15,7 @@ const AboutMe = ({ element }: Props) => {
     <Container ref={element}>
       <div className='title'>About Me</div>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
+      <div className='intro-wrap'>
         <Wrap>
           <img src='/images/photo.jpg' alt='증명사진' className='id-photo' />
           <Content>
@@ -105,16 +105,9 @@ const AboutMe = ({ element }: Props) => {
           </div>
           <div className='skills'>
             <div className='skills-title'>Skills</div>
-            <div style={{ display: "flex", gap: "30px" }}>
+            <div className='skills-wrap'>
               <div className='front'>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "10px",
-                    alignItems: "center",
-                    fontWeight: "bold",
-                  }}
-                >
+                <div className='skill'>
                   <Image
                     src={"/images/icons/check.svg"}
                     alt='check'
@@ -124,28 +117,21 @@ const AboutMe = ({ element }: Props) => {
                   <div>Front-end</div>
                 </div>
                 <div className='skill-wrap'>
-                  <div className='skill'>HTML</div>
-                  <div className='skill'>CSS</div>
-                  <div className='skill'>JavaScript</div>
-                  <div className='skill'>TypeScript</div>
-                  <div className='skill'>React</div>
-                  <div className='skill'>Next.js</div>
-                  <div className='skill'>React-Query</div>
-                  <div className='skill'>Zustand</div>
-                  <div className='skill'>Styled-Components</div>
-                  <div className='skill'>emotion</div>
+                  <div className='skill-text'>HTML</div>
+                  <div className='skill-text'>CSS</div>
+                  <div className='skill-text'>JavaScript</div>
+                  <div className='skill-text'>TypeScript</div>
+                  <div className='skill-text'>React</div>
+                  <div className='skill-text'>Next.js</div>
+                  <div className='skill-text'>React-Query</div>
+                  <div className='skill-text'>Zustand</div>
+                  <div className='skill-text'>Styled-Components</div>
+                  <div className='skill-text'>emotion</div>
                 </div>
               </div>
 
               <div className='etc'>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "10px",
-                    alignItems: "center",
-                    fontWeight: "bold",
-                  }}
-                >
+                <div className='skill'>
                   <Image
                     src={"/images/icons/check.svg"}
                     alt='check'
@@ -155,12 +141,12 @@ const AboutMe = ({ element }: Props) => {
                   <div>etc</div>
                 </div>
                 <div className='skill-wrap'>
-                  <div className='skill'>Git</div>
-                  <div className='skill'>Postman</div>
-                  <div className='skill'>Swagger</div>
-                  <div className='skill'>Figma</div>
-                  <div className='skill'>PhotoShop</div>
-                  <div className='skill'>Illustrator</div>
+                  <div className='skill-text'>Git</div>
+                  <div className='skill-text'>Postman</div>
+                  <div className='skill-text'>Swagger</div>
+                  <div className='skill-text'>Figma</div>
+                  <div className='skill-text'>PhotoShop</div>
+                  <div className='skill-text'>Illustrator</div>
                 </div>
               </div>
             </div>
@@ -194,6 +180,12 @@ const Container = styled.div`
     font-weight: bold;
     border-bottom: 4px solid ${color.pointBlue};
     padding-bottom: 10px;
+  }
+
+  .intro-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
   .info-wrap {
@@ -394,6 +386,16 @@ const Grid = styled.div`
     flex-direction: column;
     gap: 20px;
   }
+  .skills-wrap {
+    display: flex;
+    gap: 30px;
+  }
+  .skill {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-weight: bold;
+  }
   .front,
   .etc {
     display: flex;
@@ -405,7 +407,7 @@ const Grid = styled.div`
     flex-wrap: wrap;
     gap: 10px;
   }
-  .skill {
+  .skill-text {
     display: flex;
     justify-content: center;
     align-items: center;
